@@ -1,0 +1,56 @@
+{
+  "medieval": {
+    "name": "Medieval e Fantasia",
+    "image": "http://2.bp.blogspot.com/-x3zdrSYWTnc/T-Yj53SQkyI/AAAAAAAAAak/pzfVelcW8rU/s1600/app_icon.png",
+    "isActive": "true",
+    "available": true,
+    "hashDaCategoria": "hashentraaqui",
+    "version": "1.00",
+    "price": "2.99"
+  },
+  "space": {
+    "name": "Espaço e Sci Fi",
+    "image": "http://2.bp.blogspot.com/-x3zdrSYWTnc/T-Yj53SQkyI/AAAAAAAAAak/pzfVelcW8rU/s1600/app_icon.png",
+    "isActive": "true",
+    "available": true,
+    "hashDaCategoria": "hashentraaqui",
+    "version": "1.00",
+    "price": "2.99"
+  },
+  "horror": {
+    "name": "Horror e Zumbis",
+    "image": "http://2.bp.blogspot.com/-x3zdrSYWTnc/T-Yj53SQkyI/AAAAAAAAAak/pzfVelcW8rU/s1600/app_icon.png",
+    "isActive": "true",
+    "available": true,
+    "hashDaCategoria": "hashentraaqui",
+    "version": "1.00",
+    "price": "2.99"
+  },
+  "oldGames": {
+    "name": "Games 80s e 90s",
+    "image": "http://2.bp.blogspot.com/-x3zdrSYWTnc/T-Yj53SQkyI/AAAAAAAAAak/pzfVelcW8rU/s1600/app_icon.png",
+    "isActive": "true",
+    "available": true,
+    "hashDaCategoria": "hashentraaqui",
+    "version": "1.00",
+    "price": "2.99"
+  },
+  "videogames": {
+    "name": "Videogames",
+    "image": "http://2.bp.blogspot.com/-x3zdrSYWTnc/T-Yj53SQkyI/AAAAAAAAAak/pzfVelcW8rU/s1600/app_icon.png",
+    "isActive": "true",
+    "available": true,
+    "hashDaCategoria": "hashentraaqui",
+    "version": "1.00",
+    "price": "2.99"
+  },
+  "japaneseCulture": {
+    "name": "Cultura Japonesa",
+    "image": "http://2.bp.blogspot.com/-x3zdrSYWTnc/T-Yj53SQkyI/AAAAAAAAAak/pzfVelcW8rU/s1600/app_icon.png",
+    "isActive": "true",
+    "available": true,
+    "hashDaCategoria": "hashentraaqui",
+    "version": "1.00",
+    "price": "2.99"
+  }
+}

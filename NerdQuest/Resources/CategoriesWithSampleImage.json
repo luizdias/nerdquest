@@ -1,0 +1,72 @@
+{
+  "medieval": {
+    "id": 1,
+    "name": "Medieval e Fantasia",
+    "image": "https://i.imgsafe.org/3b3dad1e1f.png",
+    "isActive": "true",
+    "available": true,
+    "hashDaCategoria": "hashentraaqui",
+    "version": "1.00",
+    "price": "2.99"
+  },
+  "space": {
+    "id": 2,
+    "name": "Espaço e Sci Fi",
+    "image": "https://i.imgsafe.org/3b3dad1e1f.png",
+    "isActive": "true",
+    "available": true,
+    "hashDaCategoria": "hashentraaqui",
+    "version": "1.00",
+    "price": "2.99"
+  },
+  "horror": {
+    "id": 3,
+    "name": "Horror e Zumbis",
+    "image": "https://i.imgsafe.org/3b3dad1e1f.png",
+    "isActive": "true",
+    "available": true,
+    "hashDaCategoria": "hashentraaqui",
+    "version": "1.00",
+    "price": "2.99"
+  },
+  "classicGames": {
+    "id": 4,
+    "name": "Games Clássicos",
+    "image": "https://i.imgsafe.org/3b3dad1e1f.png",
+    "isActive": "true",
+    "available": true,
+    "hashDaCategoria": "hashentraaqui",
+    "version": "1.00",
+    "price": "2.99"
+  },
+  "videogames": {
+    "id": 5,
+    "name": "Videogames",
+    "image": "https://i.imgsafe.org/3b3dad1e1f.png",
+    "isActive": "true",
+    "available": true,
+    "hashDaCategoria": "hashentraaqui",
+    "version": "1.00",
+    "price": "2.99"
+  },
+  "japaneseCulture": {
+    "id": 6,
+    "name": "Cultura Japonesa",
+    "image": "https://i.imgsafe.org/3b3dad1e1f.png",
+    "isActive": "true",
+    "available": true,
+    "hashDaCategoria": "hashentraaqui",
+    "version": "1.00",
+    "price": "2.99"
+  },
+  "nordicMitology": {
+    "id": 7,
+    "name": "Mitologia Nórdica",
+    "image": "https://i.imgsafe.org/3b3dad1e1f.png",
+    "isActive": "true",
+    "available": true,
+    "hashDaCategoria": "hashentraaqui",
+    "version": "1.00",
+    "price": "2.99"
+  }
+}

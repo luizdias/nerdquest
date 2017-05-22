@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Categories</key>
+	<dict>
+		<key>Space</key>
+		<dict/>
+		<key>Medieval</key>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>Question</key>
+				<string>Qual o peso médio de uma armadura?</string>
+				<key>Answers</key>
+				<dict>
+					<key>isActive</key>
+					<string></string>
+					<key>isCorrect</key>
+					<string></string>
+					<key>id</key>
+					<string></string>
+					<key>New item - 4</key>
+					<string></string>
+				</dict>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
