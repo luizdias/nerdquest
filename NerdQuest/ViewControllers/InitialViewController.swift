@@ -111,7 +111,8 @@ class InitialViewController: UIViewController, APIProtocol {
             category.name = subJson["name"].stringValue
             category.available = subJson["available"].boolValue
             category.hashDaCategoria = subJson["hashDaCategoria"].stringValue
-            category.image = subJson["image"].stringValue
+// TODO: Retrieve image from URL and save locally
+//            category.image = subJson["image"].stringValue
             category.isActive = subJson["isActive"].boolValue
             category.price = subJson["price"].stringValue
             print("URL da imagem: \(category.image)")

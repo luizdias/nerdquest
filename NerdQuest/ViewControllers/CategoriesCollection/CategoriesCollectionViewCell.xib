@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="gTV-IL-0wX" userLabel="Categories Collection View Cell" customClass="DemoCollectionViewCell" customModule="NerdQuest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="344" height="580"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="344" height="580"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4h2-Xv-xjU">
+                        <rect key="frame" x="0.0" y="0.0" width="344" height="580"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="item0" translatesAutoresizingMaskIntoConstraints="NO" id="9FK-FA-F0l">
+                                <rect key="frame" x="0.0" y="0.0" width="344" height="580"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oce-vs-fcR" userLabel="LeftView">
+                                <rect key="frame" x="8" y="293" width="110" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.2070791421" blue="0.80130883779999995" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FVj-GH-Mhw" userLabel="CenterView">
+                                <rect key="frame" x="119" y="293" width="20" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                            </view>
+                            <view tag="4" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EKg-XH-vNU" userLabel="RightView">
+                                <rect key="frame" x="140" y="293" width="110" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.20707914213106515" blue="0.8013088377544425" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWJ-cY-eGR">
+                                <rect key="frame" x="182" y="16" width="138" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="Ohh-wl-gZU"/>
+                                    <constraint firstAttribute="height" constant="32" id="huD-3b-SJr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="$2.99" image="lockIcon">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buyCategoryPack:" destination="gTV-IL-0wX" eventType="touchUpInside" id="JGa-Q5-877"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="275 PERGUNTAS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZG8-y8-Dfi">
+                                <rect key="frame" x="24" y="24" width="153" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="7ZB-Zz-r7s"/>
+                                    <constraint firstAttribute="height" constant="15" id="LXK-GT-fbX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CATEGORY NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFh-D7-eSl">
+                                <rect key="frame" x="8" y="56" width="328" height="132"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="132" id="3TN-uS-PZx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.076029349662162168" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XFh-D7-eSl" secondAttribute="trailing" constant="8" id="0CL-Fq-iKl"/>
+                            <constraint firstItem="YWJ-cY-eGR" firstAttribute="top" secondItem="4h2-Xv-xjU" secondAttribute="top" constant="16" id="2VG-vd-MgJ"/>
+                            <constraint firstAttribute="trailing" secondItem="YWJ-cY-eGR" secondAttribute="trailing" constant="24" id="LdC-lN-mov"/>
+                            <constraint firstItem="ZG8-y8-Dfi" firstAttribute="leading" secondItem="4h2-Xv-xjU" secondAttribute="leading" constant="24" id="SRU-od-WfB"/>
+                            <constraint firstItem="XFh-D7-eSl" firstAttribute="top" secondItem="YWJ-cY-eGR" secondAttribute="bottom" constant="8" id="SwA-du-MNj"/>
+                            <constraint firstItem="ZG8-y8-Dfi" firstAttribute="top" secondItem="4h2-Xv-xjU" secondAttribute="top" constant="24" id="aCf-cP-CmO"/>
+                            <constraint firstItem="XFh-D7-eSl" firstAttribute="leading" secondItem="4h2-Xv-xjU" secondAttribute="leading" constant="8" id="i2x-AK-dXE"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="4h2-Xv-xjU" secondAttribute="bottom" id="dq2-mn-uaG"/>
+                <constraint firstItem="4h2-Xv-xjU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hPD-1e-5Vs"/>
+                <constraint firstAttribute="trailing" secondItem="4h2-Xv-xjU" secondAttribute="trailing" id="rGo-Fv-QiX"/>
+                <constraint firstItem="4h2-Xv-xjU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="urn-lp-GFQ"/>
+            </constraints>
+            <size key="customSize" width="275" height="575"/>
+            <connections>
+                <outlet property="backgroundImageView" destination="9FK-FA-F0l" id="kns-UF-jMo"/>
+                <outlet property="categoryPriceButton" destination="YWJ-cY-eGR" id="wwP-GS-yIj"/>
+                <outlet property="customTitle" destination="XFh-D7-eSl" id="eia-lY-ptu"/>
+                <outlet property="frontContainerView" destination="4h2-Xv-xjU" id="xrp-o7-FSA"/>
+                <outlet property="questionsAvailable" destination="ZG8-y8-Dfi" id="K71-c3-wWf"/>
+            </connections>
+            <point key="canvasLocation" x="507" y="468"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="item0" width="414" height="736"/>
+        <image name="lockIcon" width="26" height="32"/>
+    </resources>
+</document>

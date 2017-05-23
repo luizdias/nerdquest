@@ -10,6 +10,10 @@
 		0A14EDD04878F1F1090B503B /* Pods_NerdQuest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6261F0BF291ECF850236A5F /* Pods_NerdQuest.framework */; };
 		4B2585971E65076F00023D5B /* preloader.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B2585961E65076F00023D5B /* preloader.gif */; };
 		4B2A53D31E638EAC00B820D4 /* FinishedRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A53D21E638EAC00B820D4 /* FinishedRoundViewController.swift */; };
+		4B3DA6101ED3831E0011B1E8 /* CategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3DA60F1ED3831E0011B1E8 /* CategoriesCollectionViewCell.xib */; };
+		4B3DA6141ED3846C0011B1E8 /* CategoriesCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3DA6121ED3846C0011B1E8 /* CategoriesCollectionViewController.xib */; };
+		4B3DA6341ED393700011B1E8 /* CategoriesBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3DA6331ED3936F0011B1E8 /* CategoriesBrowserViewController.swift */; };
+		4B3DA6361ED39D260011B1E8 /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3DA6351ED39D260011B1E8 /* CategoriesCollectionViewCell.swift */; };
 		4B60E6301E68D694006E3A5C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B60E6321E68D694006E3A5C /* Localizable.strings */; };
 		4B636D681E5BCBE200C97226 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B636D671E5BCBE200C97226 /* AppDelegate.swift */; };
 		4B636D6D1E5BCBE200C97226 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B636D6B1E5BCBE200C97226 /* Main.storyboard */; };
@@ -89,6 +93,10 @@
 /* Begin PBXFileReference section */
 		4B2585961E65076F00023D5B /* preloader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = preloader.gif; sourceTree = "<group>"; };
 		4B2A53D21E638EAC00B820D4 /* FinishedRoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedRoundViewController.swift; sourceTree = "<group>"; };
+		4B3DA60F1ED3831E0011B1E8 /* CategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoriesCollectionViewCell.xib; path = NerdQuest/ViewControllers/CategoriesCollection/CategoriesCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		4B3DA6121ED3846C0011B1E8 /* CategoriesCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoriesCollectionViewController.xib; path = ../ViewControllers/CategoriesCollectionViewController.xib; sourceTree = "<group>"; };
+		4B3DA6331ED3936F0011B1E8 /* CategoriesBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesBrowserViewController.swift; sourceTree = "<group>"; };
+		4B3DA6351ED39D260011B1E8 /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		4B60E62E1E68D664006E3A5C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		4B60E62F1E68D664006E3A5C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		4B60E6311E68D694006E3A5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -447,15 +455,17 @@
 		4B88D9071E5CF0D30075FC5D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4B88D9081E5CF0D30075FC5D /* CongratulationsViewController.swift */,
+				4B88D9141E5CF0D30075FC5D /* QuestionsViewController */,
+				4B88D9181E5CF0D30075FC5D /* ResultsViewController */,
 				4B88D9091E5CF0D30075FC5D /* DemoTableViewController */,
 				4B88D90B1E5CF0D30075FC5D /* DemoViewController */,
 				4B88D9101E5CF0D30075FC5D /* InitialViewController.swift */,
+				4B3DA6331ED3936F0011B1E8 /* CategoriesBrowserViewController.swift */,
+				4B3DA6351ED39D260011B1E8 /* CategoriesCollectionViewCell.swift */,
+				4B88D9081E5CF0D30075FC5D /* CongratulationsViewController.swift */,
 				4B88D9111E5CF0D30075FC5D /* LoadingContentViewController.swift */,
 				4B88D9121E5CF0D30075FC5D /* LoadingPopoverViewController.swift */,
 				4B88D9131E5CF0D30075FC5D /* PointsEarnedViewController.swift */,
-				4B88D9141E5CF0D30075FC5D /* QuestionsViewController */,
-				4B88D9181E5CF0D30075FC5D /* ResultsViewController */,
 				4B88D91A1E5CF0D30075FC5D /* ThemesViewController.swift */,
 				4B88D91B1E5CF0D30075FC5D /* UIViewControllerExtension.swift */,
 				4BA2E1BB1E6CB4150000D158 /* WrongAnswerViewController.swift */,
@@ -511,6 +521,8 @@
 		4B88D91C1E5CF0D30075FC5D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4B3DA6121ED3846C0011B1E8 /* CategoriesCollectionViewController.xib */,
+				4B3DA60F1ED3831E0011B1E8 /* CategoriesCollectionViewCell.xib */,
 				4B636D6B1E5BCBE200C97226 /* Main.storyboard */,
 				4B636D701E5BCBE200C97226 /* LaunchScreen.storyboard */,
 				4B88D91D1E5CF0D30075FC5D /* AnimatingBarButton */,
@@ -665,6 +677,7 @@
 				4B636D721E5BCBE200C97226 /* LaunchScreen.storyboard in Resources */,
 				4B88D9471E5CF0D30075FC5D /* DemoCollectionViewCell.xib in Resources */,
 				4B636D6F1E5BCBE200C97226 /* Assets.xcassets in Resources */,
+				4B3DA6101ED3831E0011B1E8 /* CategoriesCollectionViewCell.xib in Resources */,
 				4B88D92B1E5CF0D30075FC5D /* GoogleService-Info.plist in Resources */,
 				4B88D9281E5CF0D30075FC5D /* CategoryMedieval.json in Resources */,
 				4B88D9341E5CF0D30075FC5D /* CategoriesWithSampleImage.json in Resources */,
@@ -673,6 +686,7 @@
 				4B636D6D1E5BCBE200C97226 /* Main.storyboard in Resources */,
 				4B60E6301E68D694006E3A5C /* Localizable.strings in Resources */,
 				4B88D9271E5CF0D30075FC5D /* Categories.json in Resources */,
+				4B3DA6141ED3846C0011B1E8 /* CategoriesCollectionViewController.xib in Resources */,
 				4B2585971E65076F00023D5B /* preloader.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -757,6 +771,7 @@
 				4B88D94A1E5CF0D30075FC5D /* LoadingContentViewController.swift in Sources */,
 				4B88D9291E5CF0D30075FC5D /* Images.swift in Sources */,
 				4B88D93E1E5CF0D30075FC5D /* ConfigurationHelper.swift in Sources */,
+				4B3DA6341ED393700011B1E8 /* CategoriesBrowserViewController.swift in Sources */,
 				4B88D9221E5CF0D30075FC5D /* API.swift in Sources */,
 				4B88D9401E5CF0D30075FC5D /* ScreenShotHelper.swift in Sources */,
 				4B88D92C1E5CF0D30075FC5D /* CollectionViewHelper.swift in Sources */,
@@ -783,6 +798,7 @@
 				4B88D92A1E5CF0D30075FC5D /* Extensions.swift in Sources */,
 				4B88D9501E5CF0D30075FC5D /* ResultViewController.swift in Sources */,
 				4B2A53D31E638EAC00B820D4 /* FinishedRoundViewController.swift in Sources */,
+				4B3DA6361ED39D260011B1E8 /* CategoriesCollectionViewCell.swift in Sources */,
 				4B88D9391E5CF0D30075FC5D /* BasePageCollectionCell.swift in Sources */,
 				4B88D92F1E5CF0D30075FC5D /* Category.swift in Sources */,
 				4B88D9411E5CF0D30075FC5D /* SubviewsForEach.swift in Sources */,
