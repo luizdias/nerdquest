@@ -9,6 +9,8 @@ target 'NerdQuest' do
   pod 'SwiftyJSON'
   pod 'Alamofire', '~> 4.0.0'
   pod 'MBProgressHUD', '~> 0.9.2'
+  pod 'Presentation'
+  pod 'Hue', git: 'https://github.com/hyperoslo/Hue', branch: 'swift3'
   # pod 'TKSwarmAlert'
   pod 'TKSwarmAlert', :path => '~/Development/TKSwarmAlert/'
   pod 'SwiftyGif'

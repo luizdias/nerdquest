@@ -6,6 +6,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - Cartography (1.1.0)
   - Fabric (1.6.11)
   - FBSDKCoreKit (4.22.1):
     - Bolts (~> 1.7)
@@ -88,7 +89,12 @@ PODS:
   - GTMSessionFetcher/Core (1.1.10)
   - GTMSessionFetcher/Full (1.1.10):
     - GTMSessionFetcher/Core (= 1.1.10)
+  - Hue (1.2.0)
   - MBProgressHUD (0.9.2)
+  - Pages (1.0.0)
+  - Presentation (3.1.0):
+    - Cartography
+    - Pages
   - Realm (2.7.0):
     - Realm/Headers (= 2.7.0)
   - Realm/Headers (2.7.0)
@@ -110,7 +116,9 @@ DEPENDENCIES:
   - Alamofire (~> 4.0.0)
   - Firebase/Core
   - FirebaseUI (~> 0.7)
+  - Hue (from `https://github.com/hyperoslo/Hue`, branch `swift3`)
   - MBProgressHUD (~> 0.9.2)
+  - Presentation
   - RealmSwift
   - SwiftyGif
   - SwiftyJSON
@@ -118,12 +126,18 @@ DEPENDENCIES:
   - UIImageColors (from `https://github.com/luizdias/UIImageColors.git`)
 
 EXTERNAL SOURCES:
+  Hue:
+    :branch: swift3
+    :git: https://github.com/hyperoslo/Hue
   TKSwarmAlert:
     :path: ~/Development/TKSwarmAlert/
   UIImageColors:
     :git: https://github.com/luizdias/UIImageColors.git
 
 CHECKOUT OPTIONS:
+  Hue:
+    :commit: 3303cbcdf0f771aea1a6d1a153e4b95eef8696eb
+    :git: https://github.com/hyperoslo/Hue
   UIImageColors:
     :commit: b9710fdb58dcc9fd7d44e9410844358126e6bd80
     :git: https://github.com/luizdias/UIImageColors.git
@@ -131,6 +145,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Cartography: 0538ccb4044acbbda2266335fc58cb4228794d90
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   FBSDKCoreKit: 9c2daf0162214d6d2e21cf8208a9c6c2a2e42b9c
   FBSDKLoginKit: 00cf28916b9f0169763a3d61985d745b579fe304
@@ -146,7 +161,10 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  Hue: 0705083b7aff40334033373e6293ec1215285ac2
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  Pages: f3718e6f03a5e2787f6b0bff4becb3c7c19bcebc
+  Presentation: c6276289c0786e6edaad45782259cd8af031db06
   Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
   RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
@@ -157,6 +175,6 @@ SPEC CHECKSUMS:
   TwitterKit: 3b6044a7320340326a4098f3e37aa1dbaeb94942
   UIImageColors: 07ed6ca8953eaf3150ea6069c705b7cc73fb559c
 
-PODFILE CHECKSUM: a4b3c1600bf5dd492927b42f674ed2d7ffcc4700
+PODFILE CHECKSUM: 2720deb5c6b1f0bf8be5ce5e8bf2f0a90b5374f6
 
 COCOAPODS: 1.2.0

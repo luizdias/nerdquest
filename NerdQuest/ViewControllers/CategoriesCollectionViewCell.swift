@@ -35,6 +35,10 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 10.0
         self.clipsToBounds = true
     }
+    
+    class func instanceFromNib() -> UIView {
+        return UINib(nibName: "CategoriesCollectionViewCell", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
+    }
 }
 
 

@@ -48,6 +48,14 @@ class Category: Object {
                 Category(title: "Videogames", details: "Do you  call yourself the master of games? Check these questions. You're gonna call yourself a noobie again ;)", image: tempImageData),
                 Category(title: "Retro games", details: "Do you  call yourself the master of games? Check these questions. You're gonna call yourself a noobie again ;)", image: tempImageData),
                 Category(title: "Sci-fi", details: "Do you  call yourself the master of games? Check these questions. You're gonna call yourself a noobie again ;)", image: tempImageData),
+                Category(title: "Medieval", details: "A set of questions that test your knowledge about medieval stuff!", image: tempImageData),
+                Category(title: "Videogames", details: "Do you  call yourself the master of games? Check these questions. You're gonna call yourself a noobie again ;)", image: tempImageData),
+                Category(title: "Retro games", details: "Do you  call yourself the master of games? Check these questions. You're gonna call yourself a noobie again ;)", image: tempImageData),
+                Category(title: "Sci-fi", details: "Do you  call yourself the master of games? Check these questions. You're gonna call yourself a noobie again ;)", image: tempImageData),
+                Category(title: "Medieval", details: "A set of questions that test your knowledge about medieval stuff!", image: tempImageData),
+                Category(title: "Videogames", details: "Do you  call yourself the master of games? Check these questions. You're gonna call yourself a noobie again ;)", image: tempImageData),
+                Category(title: "Retro games", details: "Do you  call yourself the master of games? Check these questions. You're gonna call yourself a noobie again ;)", image: tempImageData),
+                Category(title: "Sci-fi", details: "Do you  call yourself the master of games? Check these questions. You're gonna call yourself a noobie again ;)", image: tempImageData),
             ]
         }else {
             return []

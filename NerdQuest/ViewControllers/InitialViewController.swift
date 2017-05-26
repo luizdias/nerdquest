@@ -25,12 +25,17 @@ class InitialViewController: UIViewController, APIProtocol {
     let categoriesHashEndpoint = "/57cb4c4b0f00001217a1da1b"
     let categoriesEndpoint = "/57c3b4bb100000061c875cef"
     
+    @IBAction func didClickStartButton(_ sender: UIButton) {
+//        let categoriesViewController = self.storyboard?.instantiateViewController(withIdentifier: "CategoriesCard") as! CategoriesCardViewController
+        let categoriesViewController = CategoriesCardViewController(pages: [])
+        self.navigationController!.pushViewController(categoriesViewController, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//      TODO: Remove the conventional loading HUD and use a loading animation inside the green button, instead.
-        self.showHUD()
+//      TODO: Remove the conventional loading HUD and use a loading animation inside the green button, instead (while networking).
+//        self.showHUD()
         
         // Categories with hash at the beggining of the JSON:  "/57cb4af30f0000d816a1da1a"
         // First we must check the categories hash.
@@ -46,7 +51,7 @@ class InitialViewController: UIViewController, APIProtocol {
 //            request(endpoint: categoriesHashEndpoint)
 //        }
 
-        startButton.setTitle(NSLocalizedString("START", comment: "the begining. Change to Login in the future."), for: .normal)
+//        startButton.setTitle(NSLocalizedString("START", comment: "the begining. Change to Login in the future."), for: .normal)
         startButton.backgroundColor = UIColor.init(red: 255.0/255, green: 0.0/255, blue: 121.0/255, alpha: 1.0)
         startButton.layer.cornerRadius = 26
         startButton.layer.borderWidth = 0
