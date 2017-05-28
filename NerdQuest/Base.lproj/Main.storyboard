@@ -84,17 +84,16 @@
                     </navigationItem>
                     <connections>
                         <outlet property="pageLabel" destination="Irl-Rb-fcB" id="oUZ-x9-PkD"/>
-                        <segue destination="7RW-i0-HfN" kind="show" identifier="NoName" id="enc-PY-spo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cU0-3v-d17" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1258" y="428"/>
+            <point key="canvasLocation" x="1983" y="-331"/>
         </scene>
         <!--Loading Content View Controller-->
         <scene sceneID="hMy-1Z-jpG">
             <objects>
-                <viewController id="gMT-uj-pKz" customClass="LoadingContentViewController" customModule="NerdQuest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoadingVC" id="gMT-uj-pKz" customClass="LoadingContentViewController" customModule="NerdQuest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zBs-kC-i9p"/>
                         <viewControllerLayoutGuide type="bottom" id="Fza-B1-Kfd"/>
@@ -404,7 +403,7 @@
                 <navigationController restorationIdentifier="NavController" storyboardIdentifier="NavController" automaticallyAdjustsScrollViewInsets="NO" id="L1n-Ia-Jrw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5hs-Ir-kRn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5hs-Ir-kRn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -520,7 +519,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="gMT-uj-pKz" kind="show" id="iuA-dU-bm6"/>
+                                            <segue destination="gMT-uj-pKz" kind="show" identifier="StartQuestions" id="iuA-dU-bm6"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="124" id="0ee-7A-I2I">
@@ -1167,7 +1166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rf2-ci-We3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1257" y="-331"/>
+            <point key="canvasLocation" x="1257" y="428"/>
         </scene>
     </scenes>
     <resources>

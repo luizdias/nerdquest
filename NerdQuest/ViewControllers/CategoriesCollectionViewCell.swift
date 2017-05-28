@@ -17,9 +17,20 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    var cellDelegate : CategoriesCellDelegate?
+    
+    @IBAction func buyOrPlay(_ sender: UIButton) {
+        print("clicou mano!")
+        if(self.cellDelegate != nil){ //Just to be safe.
+            self.cellDelegate?.callSegueFromCell(myData: "Luiz" as AnyObject)
+        }
+    }
+    
     // MARK: - Private
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var categoryTitleLabel: UILabel!
+    @IBOutlet weak var buyOrPlayButton: UIButton!
+    var freeCategory = true
     
     fileprivate func updateUI()
     {
@@ -30,6 +41,14 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     }
     
     override func layoutSubviews() {
+        
+        buyOrPlayButton.layer.cornerRadius = 26
+        buyOrPlayButton.layer.borderWidth = 2
+        buyOrPlayButton.layer.borderColor = UIColor.blue.cgColor
+        buyOrPlayButton.titleLabel!.font = UIFont(name: "Montserrat-Bold", size: 15.0)
+        buyOrPlayButton.setTitleColor(UIColor.blue, for: .normal)
+        
+        self.freeCategory ? buyOrPlayButton.setTitle("Jogar!", for: .normal) : buyOrPlayButton.setTitle("Comprar", for: .normal)
         super.layoutSubviews()
         
         self.layer.cornerRadius = 10.0
@@ -37,28 +56,6 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     }
     
     class func instanceFromNib() -> UIView {
-        return UINib(nibName: "CategoriesCollectionViewCell", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
+        return UINib(nibName: "CategoriesCollectionViewCell", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! CategoriesCollectionViewCell
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -10,14 +10,12 @@ import UIKit
 import Presentation
 import Hue
 
-class CategoriesCardViewController: PresentationController {
-    
+class CategoriesCardViewController: PresentationController, CategoriesCellDelegate {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setNavigationTitle = false
-//        navigationItem.leftBarButtonItem = leftButton
-//        navigationItem.rightBarButtonItem = rightButton
         
         view.backgroundColor = UIColor.darkGray //UIColor(hex: "FFBC00")
         
@@ -25,6 +23,9 @@ class CategoriesCardViewController: PresentationController {
         configureBackground()
     }
     
+    struct Constants {
+        static let startSetSegue = "StartQuestions"
+    }
     
     struct BackgroundImage {
         let name: String
@@ -97,11 +98,11 @@ class CategoriesCardViewController: PresentationController {
             "Sci-Fi",
             "Retro Games",
             "Cyberpunk"].map { title -> Content in
-                let cell = CategoriesCollectionViewCell.instanceFromNib()
-//                let cell = CategoriesCollectionViewCell()
-//                let label = UILabel(frame: CGRect(x: 0, y: 0, width: 550 * ratio, height: 200 * ratio))
-//                label.numberOfLines = 5
-//                label.attributedText = NSAttributedString(string: title, attributes: attributes)
+                let cell = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! CategoriesCollectionViewCell
+                cell.buyOrPlayButton.setTitle("luiz", for: .normal)
+                cell.categoryTitleLabel.text = "LUIZ CATEGORY"
+                cell.cellDelegate = self
+//                let cell = CategoriesCollectionViewCell.instanceFromNib()
                 let position = Position(left: 0.7, top: 0.50)
                 
                 return Content(view: cell /*label*/, position: position)
@@ -160,6 +161,30 @@ class CategoriesCardViewController: PresentationController {
         
         addToBackground([groundContent])
     }
+
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//        if segue.identifier == "Start set of questions"{
+//            let loadingView = segue.destination as! LoadingContentViewController
+//        }
+//    }
+    
+    func callSegueFromCell(myData dataobject: AnyObject) {
+        let myStoryboard = UIStoryboard(name : "Main" , bundle: nil)
+        let loadingViewController = myStoryboard.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingContentViewController
+//        self.present(finishedRoundVC, animated: true, completion: nil)
+        self.navigationController?.present(loadingViewController, animated: true, completion: {})
+
+        
+        //try not to send self, just to avoid retain cycles(depends on how you handle the code on the next controller)
+//        self.navigationController?.performSegue(withIdentifier: Constants.startSetSegue, sender: self)
+//        self.performSegue(withIdentifier: Constants.startSetSegue, sender: dataobject)
+    }
+
+}
+
+protocol CategoriesCellDelegate {
+    func callSegueFromCell(myData dataobject: AnyObject)
 }
 
 extension Array {
@@ -173,47 +198,3 @@ extension Array {
         return object
     }
 }
-
-
-
-//class CategoriesCardViewController: UIViewController {
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-//        let viewController1 = UIViewController()
-//        viewController1.title = "Controller A"
-//        
-//        let viewController2 = UIViewController()
-//        viewController2.title = "Controller B"
-//        
-//        let presentationController = PresentationController(pages: [viewController1, viewController2])
-//        
-//        //Content View Model
-//        let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
-//        
-//        //Position
-//        let position = Position(left: 0.3, top: 0.4)
-//        
-//        //Slides
-//        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
-//        label.text = "Slide 1"
-//        
-//        let centeredContent = Content(view: label, position: position)
-//        let originContent = Content(view: label, position: position, centered: false)
-//        
-//        
-//        let content = Content(view: label, position: position)
-//        
-//        let controller = SlideController(contents: [content])
-//        
-//        presentationController.add([controller])
-//        
-//        
-//    }
-//    
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
-//}
