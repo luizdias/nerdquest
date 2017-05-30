@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoriesCardViewController" customModule="NerdQuest" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoriesCard"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="gTV-IL-0wX" userLabel="Categories Collection View Cell" customClass="CategoriesCollectionViewCell" customModule="NerdQuest" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="312" height="526"/>
@@ -72,7 +72,7 @@
                                     <constraint firstAttribute="width" constant="200" id="MoQ-md-gz1"/>
                                     <constraint firstAttribute="height" constant="50" id="fnc-f9-AQz"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Jogar!"/>
                                 <connections>
                                     <action selector="buyOrPlay:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Dx9-4K-yYC"/>
                                 </connections>
@@ -115,7 +115,10 @@
             <connections>
                 <outlet property="buyOrPlayButton" destination="HB1-q5-Moe" id="gsW-qy-b1m"/>
                 <outlet property="categoryTitleLabel" destination="XFh-D7-eSl" id="A3C-pb-gsg"/>
+                <outlet property="details" destination="Stg-YJ-T5s" id="0Xz-Oy-ROF"/>
                 <outlet property="imageView" destination="9FK-FA-F0l" id="ZJg-5Z-Soq"/>
+                <outlet property="numberOfQuestions" destination="ZG8-y8-Dfi" id="4Ba-rm-y5e"/>
+                <outlet property="price" destination="YWJ-cY-eGR" id="ArR-iw-DnU"/>
             </connections>
             <point key="canvasLocation" x="507" y="468"/>
         </collectionViewCell>

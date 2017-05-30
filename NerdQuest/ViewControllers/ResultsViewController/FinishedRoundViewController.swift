@@ -15,6 +15,24 @@ class FinishedRoundViewController: UIViewController {
     @IBOutlet weak var chooseNewCategoryButton: UIButton!
     @IBOutlet weak var lastRoundStats: UILabel!
     
+    @IBAction func pickNewTheme(_ sender: UIButton) {
+        let categoriesViewController = CategoriesCardViewController(pages: [])
+        if (self.navigationController != nil) {
+            self.navigationController!.pushViewController(categoriesViewController, animated: true)
+        }
+//        else {self.navigationController = UINavigationController(rootViewController: categoriesViewController)
+//            lazy var navigationController: UINavigationController = { [unowned self] in
+//                let controller = UINavigationController(rootViewController: self.initialViewController)
+//                
+//                return controller
+//                }()
+//        }
+    }
+    
+//    @IBAction func playAgain(_ sender: UIButton) {
+//        playSameRoundAgain()
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //TODO: Localize string bellow:
@@ -43,7 +61,12 @@ class FinishedRoundViewController: UIViewController {
     func playSameRoundAgain() {
 //        let segue = UIStoryboardSegue(identifier: "questionsSegue", source: self, destination: QuestionsViewController())
 //        self.prepare(for: segue, sender: nil)
-        self.performSegue(withIdentifier: "questionsSegue", sender:self)
+//        self.performSegue(withIdentifier: "questionsSegue", sender:self)
+        
+        let myStoryboard = UIStoryboard(name : "Main" , bundle: nil)
+        let loadingViewController = myStoryboard.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingContentViewController
+        //        self.present(finishedRoundVC, animated: true, completion: nil)
+        self.navigationController?.present(loadingViewController, animated: true, completion: {})
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -64,15 +87,4 @@ class FinishedRoundViewController: UIViewController {
 //    }
 
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -119,8 +119,8 @@ class QuestionsViewController: UIViewController, UITableViewDataSource, UITableV
 
     func backAction(sender:UIButton) {
         for view in (self.navigationController?.viewControllers)! {
-            if view is DemoTableViewController{
-                let viewToPop = view as! DemoTableViewController
+            if view is CategoriesCardViewController{
+                let viewToPop = view as! CategoriesCardViewController
                 self.navigationController?.popToViewController(viewToPop, animated: true)
             }
 //                self.navigationController?.popToViewController(views[views.count-3], animated: true)

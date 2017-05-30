@@ -30,6 +30,10 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var categoryTitleLabel: UILabel!
     @IBOutlet weak var buyOrPlayButton: UIButton!
+    @IBOutlet weak var price: UIButton!
+    @IBOutlet weak var details: UILabel!
+    @IBOutlet weak var numberOfQuestions: UILabel!
+    
     var freeCategory = true
     
     fileprivate func updateUI()
@@ -48,7 +52,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         buyOrPlayButton.titleLabel!.font = UIFont(name: "Montserrat-Bold", size: 15.0)
         buyOrPlayButton.setTitleColor(UIColor.blue, for: .normal)
         
-        self.freeCategory ? buyOrPlayButton.setTitle("Jogar!", for: .normal) : buyOrPlayButton.setTitle("Comprar", for: .normal)
+//        self.freeCategory ? buyOrPlayButton.setTitle("Jogar!", for: .normal) : buyOrPlayButton.setTitle("Comprar", for: .normal)
         super.layoutSubviews()
         
         self.layer.cornerRadius = 10.0

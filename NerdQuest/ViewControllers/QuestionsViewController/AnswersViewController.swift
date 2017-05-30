@@ -77,7 +77,8 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
     func finishRound() {
         let myStoryboard = UIStoryboard(name : "Main" , bundle: nil)
         let finishedRoundVC = myStoryboard.instantiateViewController(withIdentifier: "finishedRoundViewController") as! FinishedRoundViewController
-        self.present(finishedRoundVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(finishedRoundVC, animated: true)
+//        self.present(finishedRoundVC, animated: true, completion: nil)
         
     }
     

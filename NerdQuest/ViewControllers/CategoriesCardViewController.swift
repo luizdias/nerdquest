@@ -16,13 +16,15 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
         super.viewDidLoad()
         
         setNavigationTitle = false
+//        self.navigationController?.setNavigationBarHidden(navigationController?.isNavigationBarHidden == true, animated: true)
+        self.navigationItem.setHidesBackButton(true, animated: true)
         
         view.backgroundColor = UIColor.darkGray //UIColor(hex: "FFBC00")
         
         configureSlides()
         configureBackground()
     }
-    
+
     struct Constants {
         static let startSetSegue = "StartQuestions"
     }
@@ -100,9 +102,8 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
             "Cyberpunk"].map { title -> Content in
                 let cell = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! CategoriesCollectionViewCell
                 cell.buyOrPlayButton.setTitle("luiz", for: .normal)
-                cell.categoryTitleLabel.text = "LUIZ CATEGORY"
+                cell.categoryTitleLabel.text = title
                 cell.cellDelegate = self
-//                let cell = CategoriesCollectionViewCell.instanceFromNib()
                 let position = Position(left: 0.7, top: 0.50)
                 
                 return Content(view: cell /*label*/, position: position)
@@ -172,8 +173,9 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
     func callSegueFromCell(myData dataobject: AnyObject) {
         let myStoryboard = UIStoryboard(name : "Main" , bundle: nil)
         let loadingViewController = myStoryboard.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingContentViewController
-//        self.present(finishedRoundVC, animated: true, completion: nil)
-        self.navigationController?.present(loadingViewController, animated: true, completion: {})
+
+        self.navigationController?.pushViewController(loadingViewController, animated: true)
+//        self.navigationController?.present(loadingViewController, animated: true, completion: {})
 
         
         //try not to send self, just to avoid retain cycles(depends on how you handle the code on the next controller)

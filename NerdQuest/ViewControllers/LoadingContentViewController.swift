@@ -121,7 +121,11 @@ class LoadingContentViewController: UIViewController, APIProtocol {
             self.status.text = "Carregando as perguntas..."
             if networkingDidFinish{
                 cancelTimer()
-                self.performSegue(withIdentifier: "questionsSegue", sender:self)
+                let myStoryboard = UIStoryboard(name : "Main" , bundle: nil)
+                let questionsViewController = myStoryboard.instantiateViewController(withIdentifier: "questionsVC") as! QuestionsViewController
+                questionsViewController.questionList = self.questionList
+                self.navigationController?.pushViewController(questionsViewController, animated: true)
+//                self.performSegue(withIdentifier: "questionsSegue", sender:self)
             }
         }
         if counter >= 10 {

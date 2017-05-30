@@ -316,7 +316,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzI-dE-Jiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3820" y="1537.7811094452775"/>
+            <point key="canvasLocation" x="3794" y="1864"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="TqJ-F8-8EH">
@@ -518,9 +518,6 @@
                                                 <constraint firstItem="9zL-0u-FrF" firstAttribute="top" secondItem="tMC-aw-BE2" secondAttribute="top" constant="20" id="w5h-fl-OmZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="gMT-uj-pKz" kind="show" identifier="StartQuestions" id="iuA-dU-bm6"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="124" id="0ee-7A-I2I">
                                         <rect key="frame" x="0.0" y="248" width="375" height="124"/>
@@ -781,7 +778,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="koT-TQ-RUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1967" y="428"/>
+            <point key="canvasLocation" x="1257" y="-331"/>
         </scene>
         <!--Answers View Controller-->
         <scene sceneID="uro-e6-uey">
@@ -913,7 +910,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gA9-Fe-Lbb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2910" y="1538"/>
+            <point key="canvasLocation" x="2910" y="1864"/>
         </scene>
         <!--Finished Round View Controller-->
         <scene sceneID="PAA-AU-WSZ">
@@ -954,7 +951,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="L1n-Ia-Jrw" kind="presentation" id="gcM-LL-Htf"/>
+                                    <action selector="pickNewTheme:" destination="YEh-Hr-gUN" eventType="touchUpInside" id="82y-ns-jui"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parabéns!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFg-6M-EXv">
@@ -1002,14 +999,14 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="chooseNewCategoryButton" destination="rLH-UM-J4R" id="YXB-4A-TG3"/>
+                        <outlet property="chooseNewCategoryButton" destination="rLH-UM-J4R" id="mgv-ep-v85"/>
                         <outlet property="lastRoundStats" destination="dph-WF-rd3" id="9Ci-4Z-dKk"/>
                         <outlet property="playAgainButton" destination="kDD-ne-QjQ" id="Xt9-SK-HjW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87R-UU-aVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-260" y="1538"/>
+            <point key="canvasLocation" x="1257" y="1163"/>
         </scene>
         <!--Loading Popover View Controller-->
         <scene sceneID="vdo-lO-cYS">
@@ -1068,7 +1065,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAV-CK-gky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1966" y="1538"/>
+            <point key="canvasLocation" x="1982" y="1864"/>
         </scene>
         <!--Wrong Answer View Controller-->
         <scene sceneID="iI5-ga-9Wl">
@@ -1127,7 +1124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="52J-Q6-xvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1257" y="1538"/>
+            <point key="canvasLocation" x="1257" y="1864"/>
         </scene>
         <!--Categories Browser View Controller-->
         <scene sceneID="CRG-1u-XEg">
