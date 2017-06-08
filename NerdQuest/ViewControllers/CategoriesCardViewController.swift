@@ -20,9 +20,11 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
         self.navigationItem.setHidesBackButton(true, animated: true)
         
         view.backgroundColor = UIColor.darkGray //UIColor(hex: "FFBC00")
+        view.backgroundColor = UIColor.white
         
         configureSlides()
         configureBackground()
+        configureForeground()
     }
 
     struct Constants {
@@ -30,6 +32,31 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
     }
     
     struct BackgroundImage {
+        let name: String
+        let left: CGFloat
+        let top: CGFloat
+        let speed: CGFloat
+        
+        init(name: String, left: CGFloat, top: CGFloat, speed: CGFloat) {
+            self.name = name
+            self.left = left
+            self.top = top
+            self.speed = speed
+        }
+        
+        func positionAt(_ index: Int) -> Position? {
+            var position: Position?
+            
+            if index == 0 || speed != 0.0 {
+                let currentLeft = left + CGFloat(index) * speed
+                position = Position(left: currentLeft, top: top)
+            }
+            
+            return position
+        }
+    }
+    
+    struct  ForegroundContent {
         let name: String
         let left: CGFloat
         let top: CGFloat
@@ -123,15 +150,15 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
     
     func configureBackground() {
         let backgroundImages = [
-            BackgroundImage(name: "image", left: 0.0, top: 0.743, speed: -0.3),
-            BackgroundImage(name: "singleStar", left: 0.02, top: 0.77, speed: 0.25),
-            BackgroundImage(name: "image", left: 1.3, top: 0.73, speed: -1.5),
-            BackgroundImage(name: "face1", left: 0.0, top: 0.79, speed: -0.24),
-            BackgroundImage(name: "rightAnswer", left: 0.0, top: 0.627, speed: -0.16),
-            BackgroundImage(name: "singleStar", left: 0.0, top: 0.51, speed: -0.08),
-            BackgroundImage(name: "face1", left: 0.0, top: 0.29, speed: 0.0),
-            BackgroundImage(name: "Clouds", left: -0.415, top: 0.14, speed: 0.18),
-            BackgroundImage(name: "Sun", left: 0.8, top: 0.07, speed: 0.0)
+            BackgroundImage(name: "foreground0", left: 0.0, top: 0.2, speed: -0.3),
+//            BackgroundImage(name: "singleStar", left: 0.02, top: 0.77, speed: 0.25),
+//            BackgroundImage(name: "image", left: 1.3, top: 0.73, speed: -1.5),
+//            BackgroundImage(name: "face1", left: 0.0, top: 0.79, speed: -0.24),
+//            BackgroundImage(name: "rightAnswer", left: 0.0, top: 0.627, speed: -0.16),
+//            BackgroundImage(name: "singleStar", left: 0.0, top: 0.51, speed: -0.08),
+//            BackgroundImage(name: "face1", left: 0.0, top: 0.29, speed: 0.0),
+//            BackgroundImage(name: "Clouds", left: -0.415, top: 0.14, speed: 0.18),
+//            BackgroundImage(name: "Sun", left: 0.8, top: 0.07, speed: 0.0)
         ]
         
         var contents = [Content]()
@@ -144,6 +171,7 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
         }
         
         addToBackground(contents)
+//        addToForeground(contents)
         
         for row in 1...4 {
             for (column, backgroundImage) in backgroundImages.enumerated() {
@@ -161,6 +189,42 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
         contents.append(groundContent)
         
         addToBackground([groundContent])
+    }
+    
+    func configureForeground() {
+
+        let foregroundContents = [
+            ForegroundContent(name: "foreground0", left: 0.0, top: 0.2, speed: -0.3),
+            ForegroundContent(name: "view", left: 0.02, top: 0.77, speed: 0.25),
+            ForegroundContent(name: "view", left: 1.3, top: 0.73, speed: -1.5),
+            ForegroundContent(name: "view", left: 0.0, top: 0.79, speed: -0.24),
+            ForegroundContent(name: "view", left: 0.0, top: 0.627, speed: -0.16),
+            ForegroundContent(name: "view", left: 0.0, top: 0.51, speed: -0.08),
+        ]
+        
+        var contents = [Content]()
+        
+        for foregroundContent in foregroundContents {
+            let imageView = UIImageView(image: UIImage(named: foregroundContent.name))
+            if let position = foregroundContent.positionAt(0) {
+                contents.append(Content(view: imageView, position: position, centered: false))
+            }
+        }
+
+        let foregroundImage =  ForegroundContent(name: "foreground0", left: 0.0, top: 0.2, speed: 1.0)
+//        var contents = [Content]()
+        let imageView = UIImageView(image: UIImage(named: foregroundImage.name))
+        contents.append(Content(view: imageView, position: foregroundImage.positionAt(0)!, centered: false))
+        
+        let buyOrPlayButton = UIButton(frame: CGRect(x: 0, y: 0, width: 240.0, height: 50.0))
+        buyOrPlayButton.layer.cornerRadius = 26
+        buyOrPlayButton.layer.borderWidth = 2
+        buyOrPlayButton.layer.borderColor = UIColor.blue.cgColor
+        buyOrPlayButton.titleLabel!.font = UIFont(name: "Montserrat-Bold", size: 15.0)
+        buyOrPlayButton.setTitleColor(UIColor.blue, for: .normal)
+
+        
+        addToForeground(contents)
     }
 
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -118,7 +118,7 @@ DEPENDENCIES:
   - FirebaseUI (~> 0.7)
   - Hue (from `https://github.com/hyperoslo/Hue`, branch `swift3`)
   - MBProgressHUD (~> 0.9.2)
-  - Presentation
+  - Presentation (from `../Presentation`)
   - RealmSwift
   - SwiftyGif
   - SwiftyJSON
@@ -129,6 +129,8 @@ EXTERNAL SOURCES:
   Hue:
     :branch: swift3
     :git: https://github.com/hyperoslo/Hue
+  Presentation:
+    :path: ../Presentation
   TKSwarmAlert:
     :path: ~/Development/TKSwarmAlert/
   UIImageColors:
@@ -164,7 +166,7 @@ SPEC CHECKSUMS:
   Hue: 0705083b7aff40334033373e6293ec1215285ac2
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   Pages: f3718e6f03a5e2787f6b0bff4becb3c7c19bcebc
-  Presentation: c6276289c0786e6edaad45782259cd8af031db06
+  Presentation: 07f001419368d0ece73285f238b1dc3852462f23
   Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
   RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
@@ -175,6 +177,6 @@ SPEC CHECKSUMS:
   TwitterKit: 3b6044a7320340326a4098f3e37aa1dbaeb94942
   UIImageColors: 07ed6ca8953eaf3150ea6069c705b7cc73fb559c
 
-PODFILE CHECKSUM: 2720deb5c6b1f0bf8be5ce5e8bf2f0a90b5374f6
+PODFILE CHECKSUM: 101e58e6c3f886a48abe6399d8f72f5ee8901756
 
 COCOAPODS: 1.2.0

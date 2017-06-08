@@ -51,6 +51,9 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         buyOrPlayButton.layer.borderColor = UIColor.blue.cgColor
         buyOrPlayButton.titleLabel!.font = UIFont(name: "Montserrat-Bold", size: 15.0)
         buyOrPlayButton.setTitleColor(UIColor.blue, for: .normal)
+        buyOrPlayButton.isHidden = true
+        buyOrPlayButton.isEnabled = false
+        
         
 //        self.freeCategory ? buyOrPlayButton.setTitle("Jogar!", for: .normal) : buyOrPlayButton.setTitle("Comprar", for: .normal)
         super.layoutSubviews()
