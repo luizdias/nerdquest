@@ -12,21 +12,28 @@ import Hue
 
 class CategoriesCardViewController: PresentationController, CategoriesCellDelegate {
 
+    private let customNQBlue = UIColor(red: 42.0/255.0, green: 18.0/255.0, blue: 101.0/255.0, alpha: 1)
+    private let customNQPink = UIColor(red: 255.0/255.0, green: 0.0/255.0, blue: 119.0/255.0, alpha: 1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setNavigationTitle = false
 //        self.navigationController?.setNavigationBarHidden(navigationController?.isNavigationBarHidden == true, animated: true)
         self.navigationItem.setHidesBackButton(true, animated: true)
-        
-        view.backgroundColor = UIColor.darkGray //UIColor(hex: "FFBC00")
-        view.backgroundColor = UIColor.white
-        
+        addGradient(from: customNQBlue, to: customNQPink)
         configureSlides()
         configureBackground()
         configureForeground()
     }
 
+    func addGradient(from: UIColor, to: UIColor){
+        let gradient:CAGradientLayer = CAGradientLayer()
+        gradient.frame.size = self.view.frame.size
+        gradient.colors = [from.cgColor, to.cgColor]
+        self.view.layer.insertSublayer(gradient, at: 0)
+    }
+    
     struct Constants {
         static let startSetSegue = "StartQuestions"
     }
@@ -149,41 +156,41 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
     }
     
     func configureBackground() {
-        let backgroundImages = [
-            BackgroundImage(name: "foreground0", left: 0.0, top: 0.2, speed: -0.3),
-//            BackgroundImage(name: "singleStar", left: 0.02, top: 0.77, speed: 0.25),
-//            BackgroundImage(name: "image", left: 1.3, top: 0.73, speed: -1.5),
-//            BackgroundImage(name: "face1", left: 0.0, top: 0.79, speed: -0.24),
-//            BackgroundImage(name: "rightAnswer", left: 0.0, top: 0.627, speed: -0.16),
-//            BackgroundImage(name: "singleStar", left: 0.0, top: 0.51, speed: -0.08),
-//            BackgroundImage(name: "face1", left: 0.0, top: 0.29, speed: 0.0),
-//            BackgroundImage(name: "Clouds", left: -0.415, top: 0.14, speed: 0.18),
-//            BackgroundImage(name: "Sun", left: 0.8, top: 0.07, speed: 0.0)
-        ]
-        
+//        let backgroundImages = [
+////            BackgroundImage(name: "foreground0", left: 0.0, top: 0.2, speed: -0.3),
+////            BackgroundImage(name: "singleStar", left: 0.02, top: 0.77, speed: 0.25),
+////            BackgroundImage(name: "image", left: 1.3, top: 0.73, speed: -1.5),
+////            BackgroundImage(name: "face1", left: 0.0, top: 0.79, speed: -0.24),
+////            BackgroundImage(name: "rightAnswer", left: 0.0, top: 0.627, speed: -0.16),
+////            BackgroundImage(name: "singleStar", left: 0.0, top: 0.51, speed: -0.08),
+////            BackgroundImage(name: "face1", left: 0.0, top: 0.29, speed: 0.0),
+////            BackgroundImage(name: "Clouds", left: -0.415, top: 0.14, speed: 0.18),
+////            BackgroundImage(name: "Sun", left: 0.8, top: 0.07, speed: 0.0)
+//        ]
+//        
         var contents = [Content]()
-        
-        for backgroundImage in backgroundImages {
-            let imageView = UIImageView(image: UIImage(named: backgroundImage.name))
-            if let position = backgroundImage.positionAt(0) {
-                contents.append(Content(view: imageView, position: position, centered: false))
-            }
-        }
-        
-        addToBackground(contents)
+//
+//        for backgroundImage in backgroundImages {
+//            let imageView = UIImageView(image: UIImage(named: backgroundImage.name))
+//            if let position = backgroundImage.positionAt(0) {
+//                contents.append(Content(view: imageView, position: position, centered: false))
+//            }
+//        }
+//        
+//        addToBackground(contents)
 //        addToForeground(contents)
         
-        for row in 1...4 {
-            for (column, backgroundImage) in backgroundImages.enumerated() {
-                if let position = backgroundImage.positionAt(row), let content = contents.at(column) {
-                    addAnimation(TransitionAnimation(content: content, destination: position,
-                                                     duration: 2.0, damping: 1.0), forPage: row)
-                }
-            }
-        }
+//        for row in 1...4 {
+//            for (column, backgroundImage) in backgroundImages.enumerated() {
+//                if let position = backgroundImage.positionAt(row), let content = contents.at(column) {
+//                    addAnimation(TransitionAnimation(content: content, destination: position,
+//                                                     duration: 2.0, damping: 1.0), forPage: row)
+//                }
+//            }
+//        }
         
         let groundView = UIView(frame: CGRect(x: 0, y: 0, width: 1024, height: 60))
-        groundView.backgroundColor = UIColor.blue //UIColor(hex: "FFCD41")
+        groundView.backgroundColor = UIColor.black //UIColor(hex: "FFCD41")
         let groundContent = Content(view: groundView,
                                     position: Position(left: 0.0, bottom: 0.068), centered: false)
         contents.append(groundContent)
@@ -194,12 +201,12 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
     func configureForeground() {
 
         let foregroundContents = [
-            ForegroundContent(name: "foreground0", left: 0.0, top: 0.2, speed: -0.3),
-            ForegroundContent(name: "view", left: 0.02, top: 0.77, speed: 0.25),
-            ForegroundContent(name: "view", left: 1.3, top: 0.73, speed: -1.5),
-            ForegroundContent(name: "view", left: 0.0, top: 0.79, speed: -0.24),
-            ForegroundContent(name: "view", left: 0.0, top: 0.627, speed: -0.16),
-            ForegroundContent(name: "view", left: 0.0, top: 0.51, speed: -0.08),
+            ForegroundContent(name: "foreground0", left: 0.0, top: 0.2, speed: -1.0),
+            ForegroundContent(name: "foreground0", left: 1.0, top: 0.2, speed: -1.0),
+            ForegroundContent(name: "foreground0", left: 2.0, top: 0.2, speed: -1.0),
+            ForegroundContent(name: "foreground0", left: 3.0, top: 0.2, speed: -1.0),
+            ForegroundContent(name: "foreground0", left: 4.0, top: 0.2, speed: -1.0),
+            ForegroundContent(name: "foreground0", left: 5.0, top: 0.2, speed: -1.0),
         ]
         
         var contents = [Content]()
@@ -211,20 +218,57 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
             }
         }
 
-        let foregroundImage =  ForegroundContent(name: "foreground0", left: 0.0, top: 0.2, speed: 1.0)
-//        var contents = [Content]()
-        let imageView = UIImageView(image: UIImage(named: foregroundImage.name))
-        contents.append(Content(view: imageView, position: foregroundImage.positionAt(0)!, centered: false))
+        let foregroundButtons = [
+            ForegroundContent(name: "Comprar1 e Jogar!", left: 0.16, top: 0.7, speed: -1.0),
+            ForegroundContent(name:           "2Jogar!", left: 1.16, top: 0.7, speed: -1.0),
+            ForegroundContent(name: "Comprar3 e Jogar!", left: 2.16, top: 0.7, speed: -1.0),
+            ForegroundContent(name: "Comprar4 e Jogar!", left: 3.16, top: 0.7, speed: -1.0),
+            ForegroundContent(name: "Comprar5 e Jogar!", left: 4.16, top: 0.7, speed: -1.0),
+            ForegroundContent(name: "Comprar6 e Jogar!", left: 5.16, top: 0.7, speed: -1.0),
+            ]
+
+        var buttonContents = [Content]()
         
-        let buyOrPlayButton = UIButton(frame: CGRect(x: 0, y: 0, width: 240.0, height: 50.0))
-        buyOrPlayButton.layer.cornerRadius = 26
-        buyOrPlayButton.layer.borderWidth = 2
-        buyOrPlayButton.layer.borderColor = UIColor.blue.cgColor
-        buyOrPlayButton.titleLabel!.font = UIFont(name: "Montserrat-Bold", size: 15.0)
-        buyOrPlayButton.setTitleColor(UIColor.blue, for: .normal)
+        for foregroundButton in foregroundButtons {
+            let buyOrPlayButton = UIButton(frame: CGRect(x: 0, y: 0, width: 240.0, height: 50.0))
+            buyOrPlayButton.layer.cornerRadius = 26
+            buyOrPlayButton.layer.borderWidth = 2
+            // TODO: Customize the button border color according to the image predominant dark color
+            buyOrPlayButton.layer.borderColor = customNQBlue.cgColor
+            buyOrPlayButton.titleLabel!.font = UIFont(name: "Montserrat-Bold", size: 15.0)
+            buyOrPlayButton.setTitleColor(customNQBlue, for: .normal)
+            buyOrPlayButton.setTitle(foregroundButton.name, for: .normal)
+            
+            if let position = foregroundButton.positionAt(0) {
+                buttonContents.append(Content(view: buyOrPlayButton, position: position, centered: false))
+            }
+        }
+
+        for row in 1...4 {
+            for (column, foregroundContent) in foregroundContents.enumerated() {
+                if let position = foregroundContent.positionAt(row), let content = contents.at(column) {
+                    addAnimation(TransitionAnimation(content: content, destination: position,
+                                                     duration: 2.0, damping: 1.0), forPage: row)
+                    UIView.animate(withDuration: 1.0, animations: {
+                        self.view.layer.backgroundColor = UIColor.clear.cgColor
+                        self.addGradient(from: self.customNQBlue, to: UIColor.black)
+                    })
+                }
+            }
+        }
+
+        for row in 1...4 {
+            for (column, foregroundButton) in foregroundButtons.enumerated() {
+                if let position = foregroundButton.positionAt(row), let content = buttonContents.at(column) {
+                    addAnimation(TransitionAnimation(content: content, destination: position,
+                                                     duration: 2.0, damping: 1.0), forPage: row)
+                }
+            }
+        }
 
         
         addToForeground(contents)
+        addToForeground(buttonContents)
     }
 
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
