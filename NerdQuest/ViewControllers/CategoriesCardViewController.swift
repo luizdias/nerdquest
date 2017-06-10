@@ -12,9 +12,10 @@ import Hue
 
 class CategoriesCardViewController: PresentationController, CategoriesCellDelegate {
 
+    private let customNQDarkBlue = UIColor(red: 24.0/255.0, green: 10.0/255.0, blue: 53.0/255.0, alpha: 1)
     private let customNQBlue = UIColor(red: 42.0/255.0, green: 18.0/255.0, blue: 101.0/255.0, alpha: 1)
     private let customNQPink = UIColor(red: 255.0/255.0, green: 0.0/255.0, blue: 119.0/255.0, alpha: 1)
-    
+    private let fineAdjustment:CGFloat = 0.033
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,7 +32,15 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
         let gradient:CAGradientLayer = CAGradientLayer()
         gradient.frame.size = self.view.frame.size
         gradient.colors = [from.cgColor, to.cgColor]
-        self.view.layer.insertSublayer(gradient, at: 0)
+        gradient.startPoint = CGPoint(x: 0.5, y: 0.5)
+        print("passou metodo")
+        UIView.animate(withDuration: 1.0, animations: {
+            self.view.layer.backgroundColor = UIColor.clear.cgColor
+//            self.addGradient(from: self.customNQBlue, to: UIColor.black)
+            self.view.layer.insertSublayer(gradient, at: 0)
+            print("passou animacao")
+        })
+        
     }
     
     struct Constants {
@@ -138,7 +147,7 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
                 cell.buyOrPlayButton.setTitle("luiz", for: .normal)
                 cell.categoryTitleLabel.text = title
                 cell.cellDelegate = self
-                let position = Position(left: 0.7, top: 0.50)
+                let position = Position(left: 0.7, top: 0.5 + fineAdjustment)
                 
                 return Content(view: cell /*label*/, position: position)
         }
@@ -201,12 +210,12 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
     func configureForeground() {
 
         let foregroundContents = [
-            ForegroundContent(name: "foreground0", left: 0.0, top: 0.2, speed: -1.0),
-            ForegroundContent(name: "foreground0", left: 1.0, top: 0.2, speed: -1.0),
-            ForegroundContent(name: "foreground0", left: 2.0, top: 0.2, speed: -1.0),
-            ForegroundContent(name: "foreground0", left: 3.0, top: 0.2, speed: -1.0),
-            ForegroundContent(name: "foreground0", left: 4.0, top: 0.2, speed: -1.0),
-            ForegroundContent(name: "foreground0", left: 5.0, top: 0.2, speed: -1.0),
+            ForegroundContent(name: "foreground0", left: 0.0, top: 0.2 + fineAdjustment, speed: -1.0),
+            ForegroundContent(name: "foreground0", left: 1.0, top: 0.2 + fineAdjustment, speed: -1.0),
+            ForegroundContent(name: "foreground0", left: 2.0, top: 0.2 + fineAdjustment, speed: -1.0),
+            ForegroundContent(name: "foreground0", left: 3.0, top: 0.2 + fineAdjustment, speed: -1.0),
+            ForegroundContent(name: "foreground0", left: 4.0, top: 0.2 + fineAdjustment, speed: -1.0),
+            ForegroundContent(name: "foreground0", left: 5.0, top: 0.2 + fineAdjustment, speed: -1.0),
         ]
         
         var contents = [Content]()
@@ -219,12 +228,12 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
         }
 
         let foregroundButtons = [
-            ForegroundContent(name: "Comprar1 e Jogar!", left: 0.16, top: 0.7, speed: -1.0),
-            ForegroundContent(name:           "2Jogar!", left: 1.16, top: 0.7, speed: -1.0),
-            ForegroundContent(name: "Comprar3 e Jogar!", left: 2.16, top: 0.7, speed: -1.0),
-            ForegroundContent(name: "Comprar4 e Jogar!", left: 3.16, top: 0.7, speed: -1.0),
-            ForegroundContent(name: "Comprar5 e Jogar!", left: 4.16, top: 0.7, speed: -1.0),
-            ForegroundContent(name: "Comprar6 e Jogar!", left: 5.16, top: 0.7, speed: -1.0),
+            ForegroundContent(name: "Comprar e Jogar!", left: 0.16, top: 0.7 + fineAdjustment, speed: -1.0),
+            ForegroundContent(name:           "Jogar!", left: 1.16, top: 0.7 + fineAdjustment, speed: -1.0),
+            ForegroundContent(name: "Comprar e Jogar!", left: 2.16, top: 0.7 + fineAdjustment, speed: -1.0),
+            ForegroundContent(name: "Comprar e Jogar!", left: 3.16, top: 0.7 + fineAdjustment, speed: -1.0),
+            ForegroundContent(name: "Comprar e Jogar!", left: 4.16, top: 0.7 + fineAdjustment, speed: -1.0),
+            ForegroundContent(name: "Comprar e Jogar!", left: 5.16, top: 0.7 + fineAdjustment, speed: -1.0),
             ]
 
         var buttonContents = [Content]()
@@ -249,10 +258,8 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
                 if let position = foregroundContent.positionAt(row), let content = contents.at(column) {
                     addAnimation(TransitionAnimation(content: content, destination: position,
                                                      duration: 2.0, damping: 1.0), forPage: row)
-                    UIView.animate(withDuration: 1.0, animations: {
-                        self.view.layer.backgroundColor = UIColor.clear.cgColor
-                        self.addGradient(from: self.customNQBlue, to: UIColor.black)
-                    })
+                    self.addGradient(from: self.customNQBlue, to: UIColor.black)
+                    print("passou tentativa!")
                 }
             }
         }
@@ -270,25 +277,12 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
         addToForeground(contents)
         addToForeground(buttonContents)
     }
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        if segue.identifier == "Start set of questions"{
-//            let loadingView = segue.destination as! LoadingContentViewController
-//        }
-//    }
     
     func callSegueFromCell(myData dataobject: AnyObject) {
         let myStoryboard = UIStoryboard(name : "Main" , bundle: nil)
         let loadingViewController = myStoryboard.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingContentViewController
 
         self.navigationController?.pushViewController(loadingViewController, animated: true)
-//        self.navigationController?.present(loadingViewController, animated: true, completion: {})
-
-        
-        //try not to send self, just to avoid retain cycles(depends on how you handle the code on the next controller)
-//        self.navigationController?.performSegue(withIdentifier: Constants.startSetSegue, sender: self)
-//        self.performSegue(withIdentifier: Constants.startSetSegue, sender: dataobject)
     }
 
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class CategoriesCollectionViewCell: UICollectionViewCell {
     
@@ -27,6 +28,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Private
+    @IBOutlet weak var promotionalTagLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var categoryTitleLabel: UILabel!
     @IBOutlet weak var buyOrPlayButton: UIButton!
@@ -45,8 +47,8 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     }
     
     override func layoutSubviews() {
-        
-        buyOrPlayButton.layer.cornerRadius = 26
+        promotionalTagLabel.layer.cornerRadius = 36
+        buyOrPlayButton.layer.cornerRadius = 36
         buyOrPlayButton.layer.borderWidth = 2
         buyOrPlayButton.layer.borderColor = UIColor.blue.cgColor
         buyOrPlayButton.titleLabel!.font = UIFont(name: "Montserrat-Bold", size: 15.0)

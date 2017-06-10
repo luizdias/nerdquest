@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,20 +35,19 @@
                                     <constraint firstAttribute="width" constant="138" id="Ohh-wl-gZU"/>
                                     <constraint firstAttribute="height" constant="32" id="huD-3b-SJr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="$2.99" image="lockIcon">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="275 PERGUNTAS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZG8-y8-Dfi">
-                                <rect key="frame" x="24" y="24" width="153" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COLEÇÃO COM 27 PERGUNTAS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZG8-y8-Dfi">
+                                <rect key="frame" x="8" y="484" width="296" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="153" id="7ZB-Zz-r7s"/>
-                                    <constraint firstAttribute="height" constant="15" id="LXK-GT-fbX"/>
+                                    <constraint firstAttribute="height" constant="15" id="bVN-M5-7Of"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CATEGORY NAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFh-D7-eSl">
@@ -84,6 +83,15 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HOT!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yib-B5-rkf">
+                                <rect key="frame" x="28" y="22" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -94,11 +102,12 @@
                             <constraint firstItem="9FK-FA-F0l" firstAttribute="top" secondItem="4h2-Xv-xjU" secondAttribute="top" id="C9X-4u-uRT"/>
                             <constraint firstItem="HB1-q5-Moe" firstAttribute="top" secondItem="9FK-FA-F0l" secondAttribute="bottom" constant="51" id="L4t-k2-chI"/>
                             <constraint firstAttribute="trailing" secondItem="YWJ-cY-eGR" secondAttribute="trailing" constant="24" id="LdC-lN-mov"/>
-                            <constraint firstItem="ZG8-y8-Dfi" firstAttribute="leading" secondItem="4h2-Xv-xjU" secondAttribute="leading" constant="24" id="SRU-od-WfB"/>
-                            <constraint firstItem="ZG8-y8-Dfi" firstAttribute="top" secondItem="4h2-Xv-xjU" secondAttribute="top" constant="24" id="aCf-cP-CmO"/>
+                            <constraint firstAttribute="trailing" secondItem="ZG8-y8-Dfi" secondAttribute="trailing" constant="8" id="Nx7-fD-mcp"/>
                             <constraint firstAttribute="bottom" secondItem="HB1-q5-Moe" secondAttribute="bottom" constant="50" id="dSc-xO-4ox"/>
+                            <constraint firstItem="ZG8-y8-Dfi" firstAttribute="leading" secondItem="4h2-Xv-xjU" secondAttribute="leading" constant="8" id="dZ7-84-I0m"/>
                             <constraint firstItem="XFh-D7-eSl" firstAttribute="centerX" secondItem="9FK-FA-F0l" secondAttribute="centerX" id="khg-sU-w5A"/>
                             <constraint firstItem="XFh-D7-eSl" firstAttribute="centerX" secondItem="HB1-q5-Moe" secondAttribute="centerX" id="kky-HZ-Z80"/>
+                            <constraint firstItem="ZG8-y8-Dfi" firstAttribute="top" secondItem="HB1-q5-Moe" secondAttribute="bottom" constant="8" id="ts6-Lo-2SH"/>
                             <constraint firstItem="9FK-FA-F0l" firstAttribute="leading" secondItem="4h2-Xv-xjU" secondAttribute="leading" id="wNK-qo-eyM"/>
                         </constraints>
                     </view>
@@ -119,6 +128,7 @@
                 <outlet property="imageView" destination="9FK-FA-F0l" id="ZJg-5Z-Soq"/>
                 <outlet property="numberOfQuestions" destination="ZG8-y8-Dfi" id="4Ba-rm-y5e"/>
                 <outlet property="price" destination="YWJ-cY-eGR" id="ArR-iw-DnU"/>
+                <outlet property="promotionalTagLabel" destination="yib-B5-rkf" id="sMa-m6-vSp"/>
             </connections>
             <point key="canvasLocation" x="507" y="468"/>
         </collectionViewCell>

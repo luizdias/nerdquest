@@ -75,7 +75,7 @@
 "o3b-XT-MTu.text" = "Você acertou!";
 
 /* Class = "UIButton"; normalTitle = "Começar!"; ObjectID = "qhr-h6-rF7"; */
-"qhr-h6-rF7.normalTitle" = "Starte";
+"qhr-h6-rF7.normalTitle" = "Começar!";
 
 /* Class = "UILabel"; text = "De todos os personagens de histórias medievais, qual a categoria dos personagens que utilizam a magia como seu principal atributo? "; ObjectID = "rkV-jC-tTs"; */
 "rkV-jC-tTs.text" = "De todos os personagens de histórias medievais, qual a categoria dos personagens que utilizam a magia como seu principal atributo? ";
