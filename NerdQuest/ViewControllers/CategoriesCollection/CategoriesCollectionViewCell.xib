@@ -72,9 +72,6 @@
                                     <constraint firstAttribute="height" constant="50" id="fnc-f9-AQz"/>
                                 </constraints>
                                 <state key="normal" title="Jogar!"/>
-                                <connections>
-                                    <action selector="buyOrPlay:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Dx9-4K-yYC"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Stg-YJ-T5s">
                                 <rect key="frame" x="28" y="98" width="42" height="21"/>

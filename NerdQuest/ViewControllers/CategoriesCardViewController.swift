@@ -15,7 +15,11 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
     private let customNQDarkBlue = UIColor(red: 24.0/255.0, green: 10.0/255.0, blue: 53.0/255.0, alpha: 1)
     private let customNQBlue = UIColor(red: 42.0/255.0, green: 18.0/255.0, blue: 101.0/255.0, alpha: 1)
     private let customNQPink = UIColor(red: 255.0/255.0, green: 0.0/255.0, blue: 119.0/255.0, alpha: 1)
+    private let customNQDarkBlueWithAlpha = UIColor(red: 24.0/255.0, green: 10.0/255.0, blue: 53.0/255.0, alpha: 0.5)
+    private let customNQBlueWithAlpha = UIColor(red: 42.0/255.0, green: 18.0/255.0, blue: 101.0/255.0, alpha: 0.5)
+    private let customNQPinkWithAlpha = UIColor(red: 255.0/255.0, green: 0.0/255.0, blue: 119.0/255.0, alpha: 0.5)
     private let fineAdjustment:CGFloat = 0.033
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +44,6 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
             self.view.layer.insertSublayer(gradient, at: 0)
             print("passou animacao")
         })
-        
     }
     
     struct Constants {
@@ -165,39 +168,7 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
     }
     
     func configureBackground() {
-//        let backgroundImages = [
-////            BackgroundImage(name: "foreground0", left: 0.0, top: 0.2, speed: -0.3),
-////            BackgroundImage(name: "singleStar", left: 0.02, top: 0.77, speed: 0.25),
-////            BackgroundImage(name: "image", left: 1.3, top: 0.73, speed: -1.5),
-////            BackgroundImage(name: "face1", left: 0.0, top: 0.79, speed: -0.24),
-////            BackgroundImage(name: "rightAnswer", left: 0.0, top: 0.627, speed: -0.16),
-////            BackgroundImage(name: "singleStar", left: 0.0, top: 0.51, speed: -0.08),
-////            BackgroundImage(name: "face1", left: 0.0, top: 0.29, speed: 0.0),
-////            BackgroundImage(name: "Clouds", left: -0.415, top: 0.14, speed: 0.18),
-////            BackgroundImage(name: "Sun", left: 0.8, top: 0.07, speed: 0.0)
-//        ]
-//        
         var contents = [Content]()
-//
-//        for backgroundImage in backgroundImages {
-//            let imageView = UIImageView(image: UIImage(named: backgroundImage.name))
-//            if let position = backgroundImage.positionAt(0) {
-//                contents.append(Content(view: imageView, position: position, centered: false))
-//            }
-//        }
-//        
-//        addToBackground(contents)
-//        addToForeground(contents)
-        
-//        for row in 1...4 {
-//            for (column, backgroundImage) in backgroundImages.enumerated() {
-//                if let position = backgroundImage.positionAt(row), let content = contents.at(column) {
-//                    addAnimation(TransitionAnimation(content: content, destination: position,
-//                                                     duration: 2.0, damping: 1.0), forPage: row)
-//                }
-//            }
-//        }
-        
         let groundView = UIView(frame: CGRect(x: 0, y: 0, width: 1024, height: 60))
         groundView.backgroundColor = UIColor.black //UIColor(hex: "FFCD41")
         let groundContent = Content(view: groundView,
@@ -228,25 +199,29 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
         }
 
         let foregroundButtons = [
-            ForegroundContent(name: "Comprar e Jogar!", left: 0.16, top: 0.7 + fineAdjustment, speed: -1.0),
-            ForegroundContent(name:           "Jogar!", left: 1.16, top: 0.7 + fineAdjustment, speed: -1.0),
-            ForegroundContent(name: "Comprar e Jogar!", left: 2.16, top: 0.7 + fineAdjustment, speed: -1.0),
-            ForegroundContent(name: "Comprar e Jogar!", left: 3.16, top: 0.7 + fineAdjustment, speed: -1.0),
-            ForegroundContent(name: "Comprar e Jogar!", left: 4.16, top: 0.7 + fineAdjustment, speed: -1.0),
-            ForegroundContent(name: "Comprar e Jogar!", left: 5.16, top: 0.7 + fineAdjustment, speed: -1.0),
+            ForegroundContent(name: "Comprar e Jogar!", left: 0.225, top: 0.7 + fineAdjustment, speed: -1.0),
+            ForegroundContent(name:           "Jogar!", left: 1.225, top: 0.7 + fineAdjustment, speed: -1.0),
+            ForegroundContent(name: "Comprar e Jogar!", left: 2.225, top: 0.7 + fineAdjustment, speed: -1.0),
+            ForegroundContent(name: "Comprar e Jogar!", left: 3.225, top: 0.7 + fineAdjustment, speed: -1.0),
+            ForegroundContent(name: "Comprar e Jogar!", left: 4.225, top: 0.7 + fineAdjustment, speed: -1.0),
+            ForegroundContent(name: "Comprar e Jogar!", left: 5.225, top: 0.7 + fineAdjustment, speed: -1.0),
             ]
 
         var buttonContents = [Content]()
         
         for foregroundButton in foregroundButtons {
-            let buyOrPlayButton = UIButton(frame: CGRect(x: 0, y: 0, width: 240.0, height: 50.0))
+            let buyOrPlayButton = UIButton(frame: CGRect(x: 0, y: 0, width: 200.0, height: 50.0))
             buyOrPlayButton.layer.cornerRadius = 26
             buyOrPlayButton.layer.borderWidth = 2
+            buyOrPlayButton.addTarget(self, action: #selector(buySetOfQuestions), for: .touchUpInside)
+            buyOrPlayButton.addTarget(self, action: #selector(highlightBorder), for: .touchDown)
             // TODO: Customize the button border color according to the image predominant dark color
             buyOrPlayButton.layer.borderColor = customNQBlue.cgColor
             buyOrPlayButton.titleLabel!.font = UIFont(name: "Montserrat-Bold", size: 15.0)
             buyOrPlayButton.setTitleColor(customNQBlue, for: .normal)
             buyOrPlayButton.setTitle(foregroundButton.name, for: .normal)
+            buyOrPlayButton.setTitleColor(customNQBlueWithAlpha, for: .highlighted)
+            
             
             if let position = foregroundButton.positionAt(0) {
                 buttonContents.append(Content(view: buyOrPlayButton, position: position, centered: false))
@@ -276,6 +251,22 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
         
         addToForeground(contents)
         addToForeground(buttonContents)
+    }
+    
+    func buySetOfQuestions(sender: UIButton!) {
+        let btnsendtag: UIButton = sender
+        if btnsendtag.tag == 0 {
+            // Un-Highlight Button Border
+            sender.layer.borderColor = customNQBlue.cgColor
+            self.callSegueFromCell(myData: "luiz" as AnyObject)
+        }
+    }
+
+    func highlightBorder(sender: UIButton!) {
+        let btnsendtag: UIButton = sender
+        if btnsendtag.tag == 0 {
+            sender.layer.borderColor = customNQBlueWithAlpha.cgColor
+        }
     }
     
     func callSegueFromCell(myData dataobject: AnyObject) {

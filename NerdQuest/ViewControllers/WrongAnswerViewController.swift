@@ -11,10 +11,16 @@ import UIKit
 class WrongAnswerViewController: UIViewController {
 
     @IBOutlet weak var popupView: UIView!
+    @IBOutlet weak var questionDetailsLinkButton: UIButton!
+    @IBOutlet weak var wrongAnswerMessageLabel: UILabel!
     
+    @IBAction func wantMoreDetails(_ sender: UIButton) {
+        UIApplication.shared.openURL(URL(string: "http://www.stackoverflow.com")!)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        popupView.backgroundColor = UIColor.white
         popupView.layer.cornerRadius = 12
         popupView.layer.borderColor = UIColor.black.cgColor
         popupView.layer.borderWidth = 0.25

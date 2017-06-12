@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import QuartzCore
+//import QuartzCore
 
 class CategoriesCollectionViewCell: UICollectionViewCell {
     
@@ -21,7 +21,6 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     var cellDelegate : CategoriesCellDelegate?
     
     @IBAction func buyOrPlay(_ sender: UIButton) {
-        print("clicou mano!")
         if(self.cellDelegate != nil){ //Just to be safe.
             self.cellDelegate?.callSegueFromCell(myData: "Luiz" as AnyObject)
         }
@@ -47,8 +46,11 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     }
     
     override func layoutSubviews() {
-        promotionalTagLabel.layer.cornerRadius = 36
-        buyOrPlayButton.layer.cornerRadius = 36
+        promotionalTagLabel.layer.masksToBounds = true
+        promotionalTagLabel.layer.cornerRadius = 10
+        promotionalTagLabel.layer.backgroundColor = UIColor.orange.cgColor
+        promotionalTagLabel.backgroundColor = UIColor.orange
+        buyOrPlayButton.layer.cornerRadius = 26
         buyOrPlayButton.layer.borderWidth = 2
         buyOrPlayButton.layer.borderColor = UIColor.blue.cgColor
         buyOrPlayButton.titleLabel!.font = UIFont(name: "Montserrat-Bold", size: 15.0)
@@ -60,7 +62,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
 //        self.freeCategory ? buyOrPlayButton.setTitle("Jogar!", for: .normal) : buyOrPlayButton.setTitle("Comprar", for: .normal)
         super.layoutSubviews()
         
-        self.layer.cornerRadius = 10.0
+        self.layer.cornerRadius = 14.0
         self.clipsToBounds = true
     }
     

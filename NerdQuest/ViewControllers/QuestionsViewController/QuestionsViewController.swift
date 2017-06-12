@@ -17,6 +17,7 @@ class QuestionsViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var answersViewContainer: UIView!
     
     @IBOutlet weak var answersViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var infoBarButton: UIBarButtonItem!
     
     @IBAction func infoAboutTheQuestion(_ sender: UIBarButtonItem) {
         UIApplication.shared.openURL(URL(string: "http://www.stackoverflow.com")!)
@@ -48,6 +49,8 @@ class QuestionsViewController: UIViewController, UITableViewDataSource, UITableV
         transparentButton.backgroundColor = clear
         transparentButton.addTarget(self, action: #selector(backAction), for: UIControlEvents.touchUpInside)
         self.navigationController?.navigationBar.addSubview(transparentButton)
+        infoBarButton.isEnabled = false
+        infoBarButton.tintColor = UIColor.clear
     }
 
     override func viewWillAppear(_ animated: Bool) {

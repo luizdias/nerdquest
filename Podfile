@@ -26,4 +26,5 @@ target 'NerdQuest' do
   pod 'UIImageColors', :git => 'https://github.com/luizdias/UIImageColors.git'
   pod 'Firebase/Core'
   pod 'FirebaseUI', '~> 0.7'       # Pull in all Firebase UI features
+  # pod 'lottie-ios'
 end

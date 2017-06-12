@@ -47,7 +47,7 @@ class FinishedRoundViewController: UIViewController {
 //        chooseNewCategory.backgroundColor = UIColor.init(red: 255.0/255, green: 0.0/255, blue: 121.0/255, alpha: 1.0)
         chooseNewCategoryButton.layer.cornerRadius = 26
         chooseNewCategoryButton.layer.borderWidth = 0
-        chooseNewCategoryButton.layer.borderColor = UIColor.black.cgColor
+        chooseNewCategoryButton.layer.borderColor = UIColor.clear.cgColor
         
         playAgainButton.addTarget(self, action: #selector(playSameRoundAgain), for: .touchUpInside)
 //        chooseNewCategory.addTarget(self, action: #selector(showAllCategories), for: .touchUpInside)
