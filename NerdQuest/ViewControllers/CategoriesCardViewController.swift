@@ -20,7 +20,7 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
     private let customNQBlueWithAlpha = UIColor(red: 42.0/255.0, green: 18.0/255.0, blue: 101.0/255.0, alpha: 0.5)
     private let customNQPinkWithAlpha = UIColor(red: 255.0/255.0, green: 0.0/255.0, blue: 119.0/255.0, alpha: 0.5)
     private let fineAdjustment:CGFloat = 0.033
-    private var categoryList: NSMutableArray = []
+    private var categoryList = [Category]()
     private var myAPI = API()
     
     override func viewDidLoad() {
@@ -102,6 +102,31 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
         }
     }
     
+    struct  ForegroundCategory {
+        let category: Category
+        let left: CGFloat
+        let top: CGFloat
+        let speed: CGFloat
+        
+        init(category: Category, left: CGFloat, top: CGFloat, speed: CGFloat) {
+            self.category = category
+            self.left = left
+            self.top = top
+            self.speed = speed
+        }
+        
+        func positionAt(_ index: Int) -> Position? {
+            var position: Position?
+            
+            if index == 0 || speed != 0.0 {
+                let currentLeft = left + CGFloat(index) * speed
+                position = Position(left: currentLeft, top: top)
+            }
+            
+            return position
+        }
+    }
+    
     lazy var leftButton: UIBarButtonItem = { [unowned self] in
         let leftButton = UIBarButtonItem(
             title: "Previous",
@@ -142,26 +167,36 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
         let attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: color,
                           NSParagraphStyleAttributeName: paragraphStyle]
         
-        let titles = [
-            "Videosgames",
-            "Medieval & Fantasia",
-            "Sci-Fi",
-            "Retro Games",
-            "Cyberpunk"].map { title -> Content in
-                let cell = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! CategoriesCollectionViewCell
-                cell.buyOrPlayButton.setTitle("luiz", for: .normal)
-                cell.categoryTitleLabel.text = title
-                cell.cellDelegate = self
-                let position = Position(left: 0.7, top: 0.5 + fineAdjustment)
-                
-                return Content(view: cell /*label*/, position: position)
+//        let contents = [Content]()
+//        for catItem in categoryList{
+//            let title = catItem.title
+//            let id  = catItem.id
+//            let tag = catItem.tag
+//            let image = catItem.image
+//            let isActive = catItem.isActive
+//            let available = catItem.available
+//            let hashDaCategoria = catItem.hashDaCategoria
+//            let version = catItem.version
+//            let price = catItem.price
+//            let numberOfMembers = catItem.numberOfMembers
+//            let numberOfPosts = catItem.numberOfPosts
+//            let details = catItem.details
+//            contents.append(<#T##newElement: Content##Content#>)
+//        }
+        let contents = categoryList.map { content -> Content in
+            let cell = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! CategoriesCollectionViewCell
+            cell.categoryTitleLabel.text = content.title
+            cell.cellDelegate = self
+            let position = Position(left: 0.7, top: 0.5 + fineAdjustment)
+            
+            return Content(view: cell /*label*/, position: position)
         }
         
         var slides = [SlideController]()
         
-        for index in 0...4 {
-            let controller = SlideController(contents: [titles[index]])
-            controller.add(animations: [Content.centerTransition(forSlideContent: titles[index])])
+        for index in 0...contents.count-1 {
+            let controller = SlideController(contents: [contents[index]])
+            controller.add(animations: [Content.centerTransition(forSlideContent: contents[index])])
             
             slides.append(controller)
         }
@@ -182,32 +217,34 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
     
     func configureForeground() {
 
-        let foregroundContents = [
-            ForegroundContent(name: "foreground0", left: 0.0, top: 0.2 + fineAdjustment, speed: -1.0),
-            ForegroundContent(name: "foreground0", left: 1.0, top: 0.2 + fineAdjustment, speed: -1.0),
-            ForegroundContent(name: "foreground0", left: 2.0, top: 0.2 + fineAdjustment, speed: -1.0),
-            ForegroundContent(name: "foreground0", left: 3.0, top: 0.2 + fineAdjustment, speed: -1.0),
-            ForegroundContent(name: "foreground0", left: 4.0, top: 0.2 + fineAdjustment, speed: -1.0),
-            ForegroundContent(name: "foreground0", left: 5.0, top: 0.2 + fineAdjustment, speed: -1.0),
-        ]
+        var foregroundCategories=[ForegroundCategory]()
+        var foregroundButtons=[ForegroundContent]()
+        
+        var leftValue = 0.0
+        for categoryItem in categoryList {
+            let fgCat = ForegroundCategory(category: categoryItem, left: CGFloat(leftValue), top: 0.2 + fineAdjustment, speed: -1.0)
+            var buttonLabel = ""
+            
+            if categoryItem.price=="free"{
+                buttonLabel="Jogar"
+            }else{
+                buttonLabel="Comprar"
+            }
+            
+            let fgButton = ForegroundContent(name: buttonLabel, left: CGFloat(leftValue+0.225), top: 0.7 + fineAdjustment, speed: -1.0)
+            leftValue = leftValue + 1.0
+            foregroundCategories.append(fgCat)
+            foregroundButtons.append(fgButton)
+        }
         
         var contents = [Content]()
         
-        for foregroundContent in foregroundContents {
-            let imageView = UIImageView(image: UIImage(named: foregroundContent.name))
-            if let position = foregroundContent.positionAt(0) {
+        for foregroundCategoryItem in foregroundCategories {
+            let imageView = UIImageView(image: UIImage(data: foregroundCategoryItem.category.image as Data, scale: 2.0))
+            if let position = foregroundCategoryItem.positionAt(0) {
                 contents.append(Content(view: imageView, position: position, centered: false))
             }
         }
-
-        let foregroundButtons = [
-            ForegroundContent(name: "Comprar e Jogar!", left: 0.225, top: 0.7 + fineAdjustment, speed: -1.0),
-            ForegroundContent(name:           "Jogar!", left: 1.225, top: 0.7 + fineAdjustment, speed: -1.0),
-            ForegroundContent(name: "Comprar e Jogar!", left: 2.225, top: 0.7 + fineAdjustment, speed: -1.0),
-            ForegroundContent(name: "Comprar e Jogar!", left: 3.225, top: 0.7 + fineAdjustment, speed: -1.0),
-            ForegroundContent(name: "Comprar e Jogar!", left: 4.225, top: 0.7 + fineAdjustment, speed: -1.0),
-            ForegroundContent(name: "Comprar e Jogar!", left: 5.225, top: 0.7 + fineAdjustment, speed: -1.0),
-            ]
 
         var buttonContents = [Content]()
         
@@ -230,9 +267,9 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
             }
         }
 
-        for row in 1...4 {
-            for (column, foregroundContent) in foregroundContents.enumerated() {
-                if let position = foregroundContent.positionAt(row), let content = contents.at(column) {
+        for row in 1...categoryList.count {
+            for (column, foregroundCategory) in foregroundCategories.enumerated() {
+                if let position = foregroundCategory.positionAt(row), let content = contents.at(column) {
                     addAnimation(TransitionAnimation(content: content, destination: position,
                                                      duration: 2.0, damping: 1.0), forPage: row)
                     self.addGradient(from: self.customNQBlue, to: UIColor.black)
@@ -241,7 +278,7 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
             }
         }
 
-        for row in 1...4 {
+        for row in 1...categoryList.count {
             for (column, foregroundButton) in foregroundButtons.enumerated() {
                 if let position = foregroundButton.positionAt(row), let content = buttonContents.at(column) {
                     addAnimation(TransitionAnimation(content: content, destination: position,
@@ -249,8 +286,6 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
                 }
             }
         }
-
-        
         addToForeground(contents)
         addToForeground(buttonContents)
     }
@@ -279,11 +314,7 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
     }
 
     func didReceiveResult(results: JSON) {
-//        networkingDidFinish = true
-//        self.status.text = "Carregando perguntas: Sucesso!"
-        let categories: NSMutableArray = []
-//        print("Categories.didReceiveResult: \(results)")
-        
+        var categories = [Category]()
         for (_,subJson):(String, JSON) in results {
             let category = Category()
             category.id        = subJson["id"].stringValue
@@ -297,7 +328,7 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
             category.numberOfMembers = subJson["numberOfMembers"].intValue
             category.numberOfPosts   = subJson["numberOfPosts"].intValue
             category.hashDaCategoria = subJson["hashDaCategoria"].stringValue
-            categories.add(category)
+            categories.append(category)
             if let img = UIImage(named: subJson["image"].stringValue) {
                 let data = UIImagePNGRepresentation(img) as NSData?
                 category.image = data!
