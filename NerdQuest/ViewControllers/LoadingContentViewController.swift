@@ -9,7 +9,7 @@
 import UIKit
 import UIImageColors
 import SwiftyJSON
-import Alamofire
+//import Alamofire
 import SwiftyGif
 
 class LoadingContentViewController: UIViewController, APIProtocol {
@@ -30,8 +30,8 @@ class LoadingContentViewController: UIViewController, APIProtocol {
         super.viewDidLoad()
         
         //Starting with the http request to retrieve questions:
-        myAPI.get(path: "/57b8cefa1100009e108dee1c", delegate: self)
-        //myAPI.get(path: "/questions.json", delegate: self)
+//        myAPI.get(path: "/57b8cefa1100009e108dee1c", delegate: self)
+        myAPI.getLocalFrom(filename: "CategoryMedieval", delegate: self)
         self.status.text = "Conectando ao servidor..."
         startTimer()
         

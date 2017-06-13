@@ -1,156 +1,154 @@
-{
-  "questions": {
-    "question": {
-      "id": "1", 
-      "title": "Qual o peso médio de uma armadura?",
-      "isMultiple": true,
-      "isTrueFalse": false,
-      "isActive": true,
-      "level": 2,
-      "answers": [
-        {
-          "id":"1",
-          "answer": "50 kg",
-          "isCorrect": true,
-          "sourceURL": "https://pt.wikipedia.org/wiki/Armadura",
-          "isActive": true
-        },
-        {
-          "id":"1",
-          "answer": "50 kg",
-          "isCorrect": false,
-          "sourceURL": "",
-          "isActive": true
-        },
-        {
-          "id":"1",
-          "answer": "50 kg",
-          "isCorrect": false,
-          "sourceURL": "",
-          "isActive": true
-        },
-        {
-          "id":"1",
-          "answer": "50 kg",
-          "isCorrect": false,
-          "sourceURL": "",
-          "isActive": true
-        }
-      ]
-    },
-    "question": {
-      "id": "2", 
-      "title": "O que são Brúnias?",
-      "isMultiple": true,
-      "isTrueFalse": false,
-      "isActive": true,
-      "level": 3,
-      "answers": [
-        {
-          "id":"1",
-          "answer": "Uma peça de armadura",
-          "isCorrect": true,
-          "sourceURL": "https://pt.wikipedia.org/wiki/Brúnia",
-          "isActive": true
-        },
-        {
-          "id":"1",
-          "answer": "Um armamento que utiliza flechas",
-          "isCorrect": false,
-          "sourceURL": "",
-          "isActive": true
-        },
-        {
-          "id":"1",
-          "answer": "Sedimentos de solo pantanoso",
-          "isCorrect": false,
-          "sourceURL": "",
-          "isActive": true
-        },
-        {
-          "id":"1",
-          "answer": "Espécie de vegetal",
-          "isCorrect": false,
-          "sourceURL": "",
-          "isActive": true
-        }
-      ]
-    },
-    "question": {
-      "id": "3", 
-      "title": "Quantos homens tem em um batalhão?",
-      "isMultiple": true,
-      "isTrueFalse": false,
-      "isActive": true,
-      "level": 2,
-      "answers": [
-        {
-          "id":"1",
-          "answer": "50 kg",
-          "isCorrect": true,
-          "sourceURL": "https://pt.wikipedia.org/wiki/Armadura",
-          "isActive": true
-        },
-        {
-          "id":"1",
-          "answer": "50 kg",
-          "isCorrect": false,
-          "sourceURL": "",
-          "isActive": true
-        },
-        {
-          "id":"1",
-          "answer": "50 kg",
-          "isCorrect": false,
-          "sourceURL": "",
-          "isActive": true
-        },
-        {
-          "id":"1",
-          "answer": "50 kg",
-          "isCorrect": false,
-          "sourceURL": "",
-          "isActive": true
-        }
-      ]
-    },
-    "question": {
-      "id": "4", 
-      "title": "Magos eram conhecidos por serem detentores de certos conhecimentos. Quais são eles?",
-      "isMultiple": true,
-      "isTrueFalse": false,
-      "isActive": true,
-      "level": 2,
-      "answers": [
-        {
-          "id":"1",
-          "answer": "Magia",
-          "isCorrect": true,
-          "sourceURL": "https://pt.wikipedia.org/wiki/Armadura",
-          "isActive": true
-        },
-        {
-          "id":"1",
-          "answer": "Artes Marciais",
-          "isCorrect": false,
-          "sourceURL": "",
-          "isActive": true
-        },
-        {
-          "id":"1",
-          "answer": "Conhecimento bélico",
-          "isCorrect": false,
-          "sourceURL": "",
-          "isActive": true
-        },
-        {
-          "id":"1",
-          "answer": "Política",
-          "isCorrect": false,
-          "sourceURL": "",
-          "isActive": true
-        }
-      ]
-    }
+[
+  {
+  "id": "1",
+  "title": "Qual o peso médio de uma armadura?",
+  "isMultiple": true,
+  "isTrueFalse": false,
+  "isActive": true,
+  "level": 2,
+  "answers": [
+              {
+              "id": "1",
+              "text": "50 Kg",
+              "isCorrect": true,
+              "sourceURL": "https://pt.wikipedia.org/wiki/Armadura",
+              "isActive": true
+              },
+              {
+              "id": "2",
+              "text": "10 Kg",
+              "isCorrect": false,
+              "sourceURL": "",
+              "isActive": true
+              },
+              {
+              "id": "3",
+              "text": "100 kg",
+              "isCorrect": false,
+              "sourceURL": "",
+              "isActive": true
+              },
+              {
+              "id": "4",
+              "text": "Até 20 kg",
+              "isCorrect": false,
+              "sourceURL": "",
+              "isActive": true
+              }
+              ]
+  },
+  {
+  "id": "2",
+  "title": "O que são Brúnias?",
+  "isMultiple": true,
+  "isTrueFalse": false,
+  "isActive": true,
+  "level": 2,
+  "answers": [
+              {
+              "id": "1",
+              "text": "Uma peça de uma armadura",
+              "isCorrect": true,
+              "sourceURL": "https://pt.wikipedia.org/wiki/Armadura",
+              "isActive": true
+              },
+              {
+              "id": "2",
+              "text": "Um armamento que utiliza flechas",
+              "isCorrect": false,
+              "sourceURL": "",
+              "isActive": true
+              },
+              {
+              "id": "3",
+              "text": "Sedimentos de um solo pantanoso",
+              "isCorrect": false,
+              "sourceURL": "",
+              "isActive": true
+              },
+              {
+              "id": "4",
+              "text": "Espécie de vegetal",
+              "isCorrect": false,
+              "sourceURL": "",
+              "isActive": true
+              }
+              ]
+  },
+  {
+  "id": "3",
+  "title": "Um batalhão militar é composto por quantas pessoas?",
+  "isMultiple": true,
+  "isTrueFalse": false,
+  "isActive": true,
+  "level": 2,
+  "answers": [
+              {
+              "id": "1",
+              "text": "Até 200 pessoas",
+              "isCorrect": true,
+              "sourceURL": "https://pt.wikipedia.org/wiki/Armadura",
+              "isActive": true
+              },
+              {
+              "id": "2",
+              "text": "Exatamente mil homens",
+              "isCorrect": false,
+              "sourceURL": "",
+              "isActive": true
+              },
+              {
+              "id": "3",
+              "text": "Três grupamentos de 100 pessoas",
+              "isCorrect": false,
+              "sourceURL": "",
+              "isActive": true
+              },
+              {
+              "id": "4",
+              "text": "Até 600 pessoas",
+              "isCorrect": false,
+              "sourceURL": "",
+              "isActive": true
+              }
+              ]
+  },
+  {
+  "id": "4",
+  "title": "Magos eram conhecidos por serem detentores de certos conhecimentos. Quais são eles?",
+  "isMultiple": true,
+  "isTrueFalse": false,
+  "isActive": true,
+  "level": 2,
+  "answers": [
+              {
+              "id": "1",
+              "text": "Magia",
+              "isCorrect": true,
+              "sourceURL": "https://pt.wikipedia.org/wiki/Armadura",
+              "isActive": true
+              },
+              {
+              "id": "2",
+              "text": "Artes Marciais",
+              "isCorrect": false,
+              "sourceURL": "",
+              "isActive": true
+              },
+              {
+              "id": "3",
+              "text": "Conhecimento bélico",
+              "isCorrect": false,
+              "sourceURL": "",
+              "isActive": true
+              },
+              {
+              "id": "4",
+              "text": "Política",
+              "isCorrect": false,
+              "sourceURL": "",
+              "isActive": true
+              }
+              ]
   }
-}
+]

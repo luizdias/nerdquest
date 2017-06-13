@@ -113,7 +113,7 @@ class InitialViewController: UIViewController, APIProtocol {
         for (_,subJson):(String, JSON) in result {
             let category = Category()
             category.id = subJson["id"].stringValue
-            category.name = subJson["name"].stringValue
+            category.tag = subJson["tag"].stringValue
             category.available = subJson["available"].boolValue
             category.hashDaCategoria = subJson["hashDaCategoria"].stringValue
 // TODO: Retrieve image from URL and save locally

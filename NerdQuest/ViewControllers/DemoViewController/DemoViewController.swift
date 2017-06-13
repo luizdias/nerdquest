@@ -70,7 +70,7 @@ extension DemoViewController {
             var category = Category()
             category = result
             categoriesList.add(category)
-            let item:ItemInfo = ("item" + category.id, title: category.name)
+            let item:ItemInfo = ("item" + category.id, title: category.title)
             items.append(item)
         }
     }
@@ -187,7 +187,7 @@ extension DemoViewController {
         if categoriesList.count != 0 {
             let category = categoriesList[indexPath.row] as! Category
             cell.backgroundImageView?.image = UIImage(named: info.imageName)
-            cell.customTitle.text = category.name
+            cell.customTitle.text = category.title
             cell.cellIsOpen(cellsIsOpen[indexPath.row], animated:  false)
             
         }else {
@@ -254,7 +254,7 @@ extension DemoViewController {
 //            }
 //        }
         cell.backgroundImageView.image = UIImage(named: "namePlaceholder")
-        cell.customTitle.text = category.name
+        cell.customTitle.text = category.title
         
         //TODO: Here is the place where the app is crashing for now (index out of range)
         cell.cellIsOpen(cellsIsOpen[indexPath.row], animated:  false)

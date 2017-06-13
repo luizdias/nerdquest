@@ -58,6 +58,17 @@ class API {
         }
     }
     
+    func getLocalFrom(filename: String, delegate: APIProtocol? = nil){
+
+        let path = Bundle.main.path(forResource: filename, ofType: "json")
+        let jsonData = NSData(contentsOfFile:path!)
+        let json = JSON(data: jsonData! as Data)
+        print("GET Result: \(json)")
+        if (delegate != nil) {
+            delegate!.didReceiveResult(results: json)
+        }
+    }
+    
     // Setting up an API Class with a POST method that accepts a elegate of type APIProtocol
     func post(path: String, parameters: [String: AnyObject]? = nil, delegate: APIProtocol? = nil){
         let url = "\(self.hostname)\(path)"

@@ -38,7 +38,6 @@
 		4B88D9321E5CF0D30075FC5D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B88D8E61E5CF0D30075FC5D /* Montserrat-Regular.ttf */; };
 		4B88D9331E5CF0D30075FC5D /* CategoriesList.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B88D8E81E5CF0D30075FC5D /* CategoriesList.json */; };
 		4B88D9341E5CF0D30075FC5D /* CategoriesWithSampleImage.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B88D8E91E5CF0D30075FC5D /* CategoriesWithSampleImage.json */; };
-		4B88D9351E5CF0D30075FC5D /* CategoryMedieval.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B88D8EA1E5CF0D30075FC5D /* CategoryMedieval.json */; };
 		4B88D9361E5CF0D30075FC5D /* QuestionsRepos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B88D8EB1E5CF0D30075FC5D /* QuestionsRepos.plist */; };
 		4B88D9371E5CF0D30075FC5D /* Test.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B88D8EC1E5CF0D30075FC5D /* Test.json */; };
 		4B88D9381E5CF0D30075FC5D /* ExpandingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88D8EF1E5CF0D30075FC5D /* ExpandingTableViewController.swift */; };
@@ -135,7 +134,6 @@
 		4B88D8E61E5CF0D30075FC5D /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		4B88D8E81E5CF0D30075FC5D /* CategoriesList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CategoriesList.json; sourceTree = "<group>"; };
 		4B88D8E91E5CF0D30075FC5D /* CategoriesWithSampleImage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CategoriesWithSampleImage.json; sourceTree = "<group>"; };
-		4B88D8EA1E5CF0D30075FC5D /* CategoryMedieval.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CategoryMedieval.json; sourceTree = "<group>"; };
 		4B88D8EB1E5CF0D30075FC5D /* QuestionsRepos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QuestionsRepos.plist; sourceTree = "<group>"; };
 		4B88D8EC1E5CF0D30075FC5D /* Test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Test.json; sourceTree = "<group>"; };
 		4B88D8EF1E5CF0D30075FC5D /* ExpandingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingTableViewController.swift; sourceTree = "<group>"; };
@@ -325,7 +323,6 @@
 				4B88D8E61E5CF0D30075FC5D /* Montserrat-Regular.ttf */,
 				4B88D8D61E5CF0D30075FC5D /* Categories.json */,
 				4B88D8D71E5CF0D30075FC5D /* CategoryMedieval.json */,
-				4B88D8EA1E5CF0D30075FC5D /* CategoryMedieval.json */,
 				4B88D8E81E5CF0D30075FC5D /* CategoriesList.json */,
 				4B88D8E91E5CF0D30075FC5D /* CategoriesWithSampleImage.json */,
 				4B88D8EB1E5CF0D30075FC5D /* QuestionsRepos.plist */,
@@ -578,6 +575,7 @@
 				4B636D621E5BCBE200C97226 /* Resources */,
 				0CF378D6E0C7924D2DB3A33D /* [CP] Embed Pods Frameworks */,
 				E714898DBDA0E8AD75509C86 /* [CP] Copy Pods Resources */,
+				4BE12E911EF06B93006CD2B6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -690,7 +688,6 @@
 				4B88D92B1E5CF0D30075FC5D /* GoogleService-Info.plist in Resources */,
 				4B88D9281E5CF0D30075FC5D /* CategoryMedieval.json in Resources */,
 				4B88D9341E5CF0D30075FC5D /* CategoriesWithSampleImage.json in Resources */,
-				4B88D9351E5CF0D30075FC5D /* CategoryMedieval.json in Resources */,
 				4B88D9331E5CF0D30075FC5D /* CategoriesList.json in Resources */,
 				4B636D6D1E5BCBE200C97226 /* Main.storyboard in Resources */,
 				4B60E6301E68D694006E3A5C /* Localizable.strings in Resources */,
@@ -747,6 +744,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NerdQuest/Pods-NerdQuest-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		4BE12E911EF06B93006CD2B6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 1024f5111bee4080df337c78ed6c91684998bac4 916098e0a9978eb330e2e23935e27ca55b9d9442242c0f3f204d6e28fd8670f2";
 		};
 		E714898DBDA0E8AD75509C86 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

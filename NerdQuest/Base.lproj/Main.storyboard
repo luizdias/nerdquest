@@ -404,7 +404,7 @@
                 <navigationController restorationIdentifier="NavController" storyboardIdentifier="NavController" automaticallyAdjustsScrollViewInsets="NO" id="L1n-Ia-Jrw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5hs-Ir-kRn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5hs-Ir-kRn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

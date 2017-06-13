@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -47,12 +49,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        
 //        let navigationController: UINavigationController = UINavigationController(rootViewController: initialViewController)
 //        
-        
+        Fabric.with([Crashlytics.self])
+        self.logUser()
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 
         return true
+    }
+    
+    func logUser() {
+        // TODO: Use the current user's information
+        // You can call any combination of these three methods
+        Crashlytics.sharedInstance().setUserEmail("user@fabric.io")
+        Crashlytics.sharedInstance().setUserIdentifier("12345")
+        Crashlytics.sharedInstance().setUserName("Test User")
     }
 
 }

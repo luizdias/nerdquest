@@ -27,4 +27,6 @@ target 'NerdQuest' do
   pod 'Firebase/Core'
   pod 'FirebaseUI', '~> 0.7'       # Pull in all Firebase UI features
   # pod 'lottie-ios'
+  pod 'Fabric'
+  pod 'Crashlytics'
 end

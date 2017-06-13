@@ -1,6 +1,11 @@
 {
   "medieval": {
-    "name": "Medieval e Fantasia",
+    "title": "Medieval e Fantasia",
+    "tag": "HOT",
+    "numberOfPosts" : "10",
+    "numberOfMembers" : "100",
+    "details": "Estes são os detalhes da categoria. Descrever brevemente do que se trata.",
+    "id":"1",
     "image": "http://2.bp.blogspot.com/-x3zdrSYWTnc/T-Yj53SQkyI/AAAAAAAAAak/pzfVelcW8rU/s1600/app_icon.png",
     "isActive": "true",
     "available": true,
@@ -9,7 +14,12 @@
     "price": "2.99"
   },
   "space": {
-    "name": "Espaço e Sci Fi",
+    "title": "Espaço e Sci Fi",
+    "tag": "HOT",
+    "numberOfPosts" : "10",
+    "numberOfMembers" : "100",
+    "details": "Estes são os detalhes da categoria. Descrever brevemente do que se trata.",
+    "id":"1",
     "image": "http://2.bp.blogspot.com/-x3zdrSYWTnc/T-Yj53SQkyI/AAAAAAAAAak/pzfVelcW8rU/s1600/app_icon.png",
     "isActive": "true",
     "available": true,
@@ -18,7 +28,12 @@
     "price": "2.99"
   },
   "horror": {
-    "name": "Horror e Zumbis",
+    "title": "Horror e Zumbis",
+    "tag": "HOT",
+    "numberOfPosts" : "10",
+    "numberOfMembers" : "100",
+    "details": "Estes são os detalhes da categoria. Descrever brevemente do que se trata.",
+    "id":"1",
     "image": "http://2.bp.blogspot.com/-x3zdrSYWTnc/T-Yj53SQkyI/AAAAAAAAAak/pzfVelcW8rU/s1600/app_icon.png",
     "isActive": "true",
     "available": true,
@@ -27,7 +42,12 @@
     "price": "2.99"
   },
   "oldGames": {
-    "name": "Games 80s e 90s",
+    "title": "Games 80s e 90s",
+    "tag": "HOT",
+    "numberOfPosts" : "10",
+    "numberOfMembers" : "100",
+    "details": "Estes são os detalhes da categoria. Descrever brevemente do que se trata.",
+    "id":"1",
     "image": "http://2.bp.blogspot.com/-x3zdrSYWTnc/T-Yj53SQkyI/AAAAAAAAAak/pzfVelcW8rU/s1600/app_icon.png",
     "isActive": "true",
     "available": true,
@@ -36,7 +56,12 @@
     "price": "2.99"
   },
   "videogames": {
-    "name": "Videogames",
+    "title": "Videogames",
+    "tag": "HOT",
+    "numberOfPosts" : "10",
+    "numberOfMembers" : "100",
+    "details": "Estes são os detalhes da categoria. Descrever brevemente do que se trata.",
+    "id":"1",
     "image": "http://2.bp.blogspot.com/-x3zdrSYWTnc/T-Yj53SQkyI/AAAAAAAAAak/pzfVelcW8rU/s1600/app_icon.png",
     "isActive": "true",
     "available": true,
@@ -45,7 +70,12 @@
     "price": "2.99"
   },
   "japaneseCulture": {
-    "name": "Cultura Japonesa",
+    "title": "Cultura Japonesa",
+    "tag": "HOT",
+    "numberOfPosts" : "10",
+    "numberOfMembers" : "100",
+    "details": "Estes são os detalhes da categoria. Descrever brevemente do que se trata.",
+    "id":"1",
     "image": "http://2.bp.blogspot.com/-x3zdrSYWTnc/T-Yj53SQkyI/AAAAAAAAAak/pzfVelcW8rU/s1600/app_icon.png",
     "isActive": "true",
     "available": true,

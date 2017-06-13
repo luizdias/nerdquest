@@ -13,7 +13,7 @@ class Category: Object {
     
     // MARK: - Public API
     dynamic var id = "0"
-    dynamic var name = ""
+    dynamic var tag = ""
     dynamic var image=NSData()
     dynamic var isActive = true
     dynamic var available = true

@@ -7,6 +7,8 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
   - Cartography (1.1.0)
+  - Crashlytics (3.8.4):
+    - Fabric (~> 1.6.3)
   - Fabric (1.6.11)
   - FBSDKCoreKit (4.22.1):
     - Bolts (~> 1.7)
@@ -114,6 +116,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.0.0)
+  - Crashlytics
+  - Fabric
   - Firebase/Core
   - FirebaseUI (~> 0.7)
   - Hue (from `https://github.com/hyperoslo/Hue`, branch `swift3`)
@@ -148,6 +152,7 @@ SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Cartography: 0538ccb4044acbbda2266335fc58cb4228794d90
+  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   FBSDKCoreKit: 9c2daf0162214d6d2e21cf8208a9c6c2a2e42b9c
   FBSDKLoginKit: 00cf28916b9f0169763a3d61985d745b579fe304
@@ -177,6 +182,6 @@ SPEC CHECKSUMS:
   TwitterKit: 3b6044a7320340326a4098f3e37aa1dbaeb94942
   UIImageColors: 07ed6ca8953eaf3150ea6069c705b7cc73fb559c
 
-PODFILE CHECKSUM: a61b98bcd72806ce1f18229a9185db3f11463065
+PODFILE CHECKSUM: dc0acdcffdc307f4448202ba9e4d17ad0bcd0e24
 
 COCOAPODS: 1.2.0

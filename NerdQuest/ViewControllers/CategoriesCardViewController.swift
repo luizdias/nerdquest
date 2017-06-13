@@ -9,8 +9,9 @@
 import UIKit
 import Presentation
 import Hue
+import SwiftyJSON
 
-class CategoriesCardViewController: PresentationController, CategoriesCellDelegate {
+class CategoriesCardViewController: PresentationController, CategoriesCellDelegate, APIProtocol {
 
     private let customNQDarkBlue = UIColor(red: 24.0/255.0, green: 10.0/255.0, blue: 53.0/255.0, alpha: 1)
     private let customNQBlue = UIColor(red: 42.0/255.0, green: 18.0/255.0, blue: 101.0/255.0, alpha: 1)
@@ -19,6 +20,8 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
     private let customNQBlueWithAlpha = UIColor(red: 42.0/255.0, green: 18.0/255.0, blue: 101.0/255.0, alpha: 0.5)
     private let customNQPinkWithAlpha = UIColor(red: 255.0/255.0, green: 0.0/255.0, blue: 119.0/255.0, alpha: 0.5)
     private let fineAdjustment:CGFloat = 0.033
+    private var categoryList: NSMutableArray = []
+    private var myAPI = API()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +30,8 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
 //        self.navigationController?.setNavigationBarHidden(navigationController?.isNavigationBarHidden == true, animated: true)
         self.navigationItem.setHidesBackButton(true, animated: true)
         addGradient(from: customNQBlue, to: customNQPink)
-        configureSlides()
-        configureBackground()
-        configureForeground()
+        self.showHUD()
+        myAPI.getLocalFrom(filename: "Categories", delegate: self)
     }
 
     func addGradient(from: UIColor, to: UIColor){
@@ -276,6 +278,54 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
         self.navigationController?.pushViewController(loadingViewController, animated: true)
     }
 
+    func didReceiveResult(results: JSON) {
+//        networkingDidFinish = true
+//        self.status.text = "Carregando perguntas: Sucesso!"
+        let categories: NSMutableArray = []
+//        print("Categories.didReceiveResult: \(results)")
+        
+        for (_,subJson):(String, JSON) in results {
+            let category = Category()
+            category.id        = subJson["id"].stringValue
+            category.tag      = subJson["tag"].stringValue
+            category.isActive  = subJson["isActive"].boolValue
+            category.available = subJson["available"].boolValue
+            category.version   = subJson["version"].stringValue
+            category.price     = subJson["price"].stringValue
+            category.title     = subJson["title"].stringValue
+            category.details   = subJson["details"].stringValue
+            category.numberOfMembers = subJson["numberOfMembers"].intValue
+            category.numberOfPosts   = subJson["numberOfPosts"].intValue
+            category.hashDaCategoria = subJson["hashDaCategoria"].stringValue
+            categories.add(category)
+            if let img = UIImage(named: subJson["image"].stringValue) {
+                let data = UIImagePNGRepresentation(img) as NSData?
+                category.image = data!
+            }
+        }
+        categoryList = categories
+        self.hideHUD()
+        configureSlides()
+        configureBackground()
+        configureForeground()
+    }
+    
+    func didErrorHappened(error: NSError) {
+        self.hideHUD()
+        let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        if let message = error.userInfo["message"]{
+            print("\((message as AnyObject).description)")
+            alert.title = "Oops! 😮"
+            alert.message = message as? String
+            //Cleaning our questions and answers dic.
+            categoryList = []
+        }else {
+            alert.title = "Erro"
+            alert.message = "Não foi possível ao ler as categorias. Tente novamente mais tarde (1011)."
+        }
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 protocol CategoriesCellDelegate {
