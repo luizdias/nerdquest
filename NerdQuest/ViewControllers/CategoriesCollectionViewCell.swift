@@ -35,7 +35,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var details: UILabel!
     @IBOutlet weak var numberOfQuestions: UILabel!
     
-    var freeCategory = true
+    var freeCategory = false
     
     fileprivate func updateUI()
     {
@@ -57,6 +57,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         buyOrPlayButton.setTitleColor(UIColor.blue, for: .normal)
         buyOrPlayButton.isHidden = true
         buyOrPlayButton.isEnabled = false
+        details.sizeToFit()
         
         
 //        self.freeCategory ? buyOrPlayButton.setTitle("Jogar!", for: .normal) : buyOrPlayButton.setTitle("Comprar", for: .normal)

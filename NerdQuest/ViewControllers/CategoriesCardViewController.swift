@@ -167,29 +167,27 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
         let attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: color,
                           NSParagraphStyleAttributeName: paragraphStyle]
         
-//        let contents = [Content]()
-//        for catItem in categoryList{
-//            let title = catItem.title
-//            let id  = catItem.id
-//            let tag = catItem.tag
-//            let image = catItem.image
-//            let isActive = catItem.isActive
-//            let available = catItem.available
-//            let hashDaCategoria = catItem.hashDaCategoria
-//            let version = catItem.version
-//            let price = catItem.price
-//            let numberOfMembers = catItem.numberOfMembers
-//            let numberOfPosts = catItem.numberOfPosts
-//            let details = catItem.details
-//            contents.append(<#T##newElement: Content##Content#>)
-//        }
         let contents = categoryList.map { content -> Content in
             let cell = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! CategoriesCollectionViewCell
             cell.categoryTitleLabel.text = content.title
+            cell.details.text = content.details
+            if content.price == "free"{
+                cell.price.setTitle("GRÁTIS", for: .normal)
+                cell.price.setImage(UIImage(), for: .normal)
+            }else{
+                cell.price.setTitle(content.price, for: .normal)
+            }
+            if content.tag == ""{
+                cell.promotionalTagLabel.isEnabled = false
+                cell.promotionalTagLabel.alpha = 0.0
+            }else{
+                cell.promotionalTagLabel.text = content.tag
+            }
+            cell.numberOfQuestions.text = "COLEÇÃO COM \(content.numberOfMembers) PERGUNTAS"
             cell.cellDelegate = self
             let position = Position(left: 0.7, top: 0.5 + fineAdjustment)
             
-            return Content(view: cell /*label*/, position: position)
+            return Content(view: cell, position: position)
         }
         
         var slides = [SlideController]()
@@ -222,9 +220,9 @@ class CategoriesCardViewController: PresentationController, CategoriesCellDelega
         
         var leftValue = 0.0
         for categoryItem in categoryList {
-            let fgCat = ForegroundCategory(category: categoryItem, left: CGFloat(leftValue), top: 0.2 + fineAdjustment, speed: -1.0)
-            var buttonLabel = ""
+            let fgCat = ForegroundCategory(category: categoryItem, left: CGFloat(leftValue), top: 0.3 + fineAdjustment, speed: -1.0)
             
+            var buttonLabel = ""
             if categoryItem.price=="free"{
                 buttonLabel="Jogar"
             }else{
