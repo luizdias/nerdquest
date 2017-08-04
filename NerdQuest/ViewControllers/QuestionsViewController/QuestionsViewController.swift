@@ -48,7 +48,13 @@ class QuestionsViewController: UIViewController, UITableViewDataSource, UITableV
 //        transparentButton.backgroundColor = clear
 //        transparentButton.setTitle("< Sair", for: .normal)
 //        transparentButton.addTarget(self, action: #selector(backAction), for: UIControlEvents.touchUpInside)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Sair", style: .done, target: self, action: #selector(backAction))
+        let fontSize:CGFloat = 16;
+        let font:UIFont = UIFont.boldSystemFont(ofSize: fontSize);
+        let attributes:[String : Any] = [NSFontAttributeName: font];
+        let customBack = UIBarButtonItem(title: "‹ Sair", style: .done, target: self, action: #selector(backAction))
+        customBack.setTitleTextAttributes(attributes, for: UIControlState.normal);
+        self.navigationItem.leftBarButtonItem = customBack
+        
 //        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .Done, target: self, action: #selector(self.backToInitial(sender:)))
 
 //        self.navigationController?.navigationBar.addSubview(transparentButton)

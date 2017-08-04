@@ -38,6 +38,16 @@ class FinishedRoundViewController: UIViewController {
         playAgainButton.layer.borderWidth = 0
         playAgainButton.layer.borderColor = UIColor.black.cgColor
         
+        let fontSize:CGFloat = 16;
+        let font:UIFont = UIFont.boldSystemFont(ofSize: fontSize);
+        let attributes:[String : Any] = [NSFontAttributeName: font];
+        let customBack = UIBarButtonItem(title: "‹ Sair", style: .done, target: self, action: #selector(pickNewTheme))
+        customBack.setTitleTextAttributes(attributes, for: UIControlState.normal);
+        // Hiding the navigationItem
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.hidesBackButton = true
+//        self.navigationItem.leftBarButtonItem = customBack
+        
         //TODO: Localize string bellow:
 //        chooseNewCategory.setTitle(NSLocalizedString("PICK_NEW_THEME", comment: "Pick new theme."), for: .normal)
 //        chooseNewCategory.backgroundColor = UIColor.init(red: 255.0/255, green: 0.0/255, blue: 121.0/255, alpha: 1.0)
@@ -55,14 +65,11 @@ class FinishedRoundViewController: UIViewController {
     }
     
     func playSameRoundAgain() {
-//        let segue = UIStoryboardSegue(identifier: "questionsSegue", source: self, destination: QuestionsViewController())
-//        self.prepare(for: segue, sender: nil)
-//        self.performSegue(withIdentifier: "questionsSegue", sender:self)
-        
         let myStoryboard = UIStoryboard(name : "Main" , bundle: nil)
         let loadingViewController = myStoryboard.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingContentViewController
         //        self.present(finishedRoundVC, animated: true, completion: nil)
-        self.navigationController?.present(loadingViewController, animated: true, completion: {})
+        self.navigationController?.show(loadingViewController, sender: nil)
+//        self.navigationController?.present(loadingViewController, animated: true, completion: {})
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
