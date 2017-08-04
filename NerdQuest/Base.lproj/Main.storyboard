@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DRw-Lr-igy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G23a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DRw-Lr-igy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -34,8 +34,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="o88-Ae-QCA">
                                 <rect key="frame" x="0.0" y="-24" width="375" height="691"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1/15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irl-Rb-fcB">
-                                <rect key="frame" x="173" y="626" width="31" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irl-Rb-fcB">
+                                <rect key="frame" x="172" y="626" width="31" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.85882352941176465" green="0.8666666666666667" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -404,7 +404,7 @@
                 <navigationController restorationIdentifier="NavController" storyboardIdentifier="NavController" automaticallyAdjustsScrollViewInsets="NO" id="L1n-Ia-Jrw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5hs-Ir-kRn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5hs-Ir-kRn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -432,8 +432,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="MOR-g7-Roh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="124"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="MOR-g7-Roh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars" translatesAutoresizingMaskIntoConstraints="NO" id="u4E-kh-oBd">
                                                     <rect key="frame" x="40" y="103" width="77" height="12"/>
@@ -442,8 +442,8 @@
                                                         <constraint firstAttribute="height" constant="12" id="r69-to-MYP"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Torne-se um expert e descubra inúmeras curiosidades incríveis com este pack de perguntas sobre o mundo medieval." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xh7-la-W1r">
-                                                    <rect key="frame" x="40" y="8" width="508" height="93"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Torne-se um expert e descubra inúmeras curiosidades incríveis com este pack de perguntas sobre o mundo medieval." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xh7-la-W1r">
+                                                    <rect key="frame" x="40" y="8" width="283" height="93"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="93" id="sMh-kr-4nO"/>
                                                     </constraints>
@@ -479,8 +479,8 @@
                                                         <constraint firstAttribute="height" constant="40" id="b9d-Vi-STe"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="heand" translatesAutoresizingMaskIntoConstraints="NO" id="Nk4-8x-Lwg">
-                                                    <rect key="frame" x="556" y="34" width="14" height="13"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heand" translatesAutoresizingMaskIntoConstraints="NO" id="Nk4-8x-Lwg">
+                                                    <rect key="frame" x="331" y="34" width="14" height="13"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ligia Sims" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVC-Pp-S9H">
                                                     <rect key="frame" x="108" y="31" width="70" height="18"/>
@@ -494,8 +494,8 @@
                                                     <color key="textColor" red="0.76470588235294112" green="0.76470588235294112" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zo-A7-sbM">
-                                                    <rect key="frame" x="40" y="57" width="498" height="59"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zo-A7-sbM">
+                                                    <rect key="frame" x="40" y="57" width="273" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="zel-Yy-v9k"/>
                                                     </constraints>
@@ -534,8 +534,8 @@
                                                         <constraint firstAttribute="width" constant="40" id="lAw-yT-R7T"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="heand" translatesAutoresizingMaskIntoConstraints="NO" id="szO-5V-CyH">
-                                                    <rect key="frame" x="556" y="34" width="14" height="13"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heand" translatesAutoresizingMaskIntoConstraints="NO" id="szO-5V-CyH">
+                                                    <rect key="frame" x="331" y="34" width="14" height="13"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luiz Dias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEu-Ap-Kms">
                                                     <rect key="frame" x="108" y="31" width="62" height="18"/>
@@ -549,8 +549,8 @@
                                                     <color key="textColor" red="0.76470588240000004" green="0.76470588240000004" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkV-jC-tTs">
-                                                    <rect key="frame" x="40" y="57" width="498" height="59"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkV-jC-tTs">
+                                                    <rect key="frame" x="40" y="57" width="273" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="pYw-qC-eUH"/>
                                                     </constraints>
@@ -589,8 +589,8 @@
                                                         <constraint firstAttribute="width" constant="40" id="goR-UO-N7g"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="heand" translatesAutoresizingMaskIntoConstraints="NO" id="ceS-Mg-PrP">
-                                                    <rect key="frame" x="556" y="34" width="14" height="13"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heand" translatesAutoresizingMaskIntoConstraints="NO" id="ceS-Mg-PrP">
+                                                    <rect key="frame" x="331" y="34" width="14" height="13"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ligia Sims" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3U-of-sdv">
                                                     <rect key="frame" x="108" y="31" width="70" height="18"/>
@@ -604,8 +604,8 @@
                                                     <color key="textColor" red="0.76470588240000004" green="0.76470588240000004" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZN-4l-hGa">
-                                                    <rect key="frame" x="40" y="57" width="498" height="59"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZN-4l-hGa">
+                                                    <rect key="frame" x="40" y="57" width="273" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="z9M-6w-uYi"/>
                                                     </constraints>
@@ -644,8 +644,8 @@
                                                         <constraint firstAttribute="height" constant="40" id="jDR-B8-a7U"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="heand" translatesAutoresizingMaskIntoConstraints="NO" id="g7r-dJ-em9">
-                                                    <rect key="frame" x="556" y="34" width="14" height="13"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heand" translatesAutoresizingMaskIntoConstraints="NO" id="g7r-dJ-em9">
+                                                    <rect key="frame" x="331" y="34" width="14" height="13"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luiz Dias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sx-fO-Xiy">
                                                     <rect key="frame" x="108" y="31" width="62" height="18"/>
@@ -659,8 +659,8 @@
                                                     <color key="textColor" red="0.76470588240000004" green="0.76470588240000004" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYn-LQ-ReD">
-                                                    <rect key="frame" x="40" y="57" width="498" height="59"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYn-LQ-ReD">
+                                                    <rect key="frame" x="40" y="57" width="273" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="sMt-dP-LYh"/>
                                                     </constraints>
@@ -699,8 +699,8 @@
                                                         <constraint firstAttribute="width" constant="40" id="hN8-5E-akX"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="heand" translatesAutoresizingMaskIntoConstraints="NO" id="hz8-Cp-lQj">
-                                                    <rect key="frame" x="524" y="34" width="14" height="13"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heand" translatesAutoresizingMaskIntoConstraints="NO" id="hz8-Cp-lQj">
+                                                    <rect key="frame" x="299" y="34" width="14" height="13"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ligia Sims" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjL-xf-PcV">
                                                     <rect key="frame" x="108" y="31" width="74" height="18"/>
@@ -708,8 +708,8 @@
                                                     <color key="textColor" red="0.41960784309999999" green="0.41960784309999999" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6w-vY-gMp">
-                                                    <rect key="frame" x="40" y="57" width="498" height="59"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6w-vY-gMp">
+                                                    <rect key="frame" x="40" y="57" width="273" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="T4M-G7-7hc"/>
                                                     </constraints>

@@ -15,14 +15,17 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
 //    let swAlert = TKSwarmAlert(backgroundType: .transparentBlack(alpha: 0.5))
-    let swAlertWon = TKSwarmAlert(backgroundType: .brightBlur)
-    let swAlertLose = TKSwarmAlert(backgroundType: .blur)
+    private let swAlertWon = TKSwarmAlert(backgroundType: .brightBlur)
+    private let swAlertLose = TKSwarmAlert(backgroundType: .blur)
     
-    let dimLevel: CGFloat = 0.5
-    let dimSpeed: Double = 0.2
+    private let dimLevel: CGFloat = 0.5
+    private let dimSpeed: Double = 0.2
     var delegate:AnswersViewControllerDelegate?
-    var tableData = [""]
+    private var tableData = [""]
+    private var rightAnswer = 0
+    
     public var questionList: NSMutableArray = []
+    var questionListShuffled: NSMutableArray = []
     var activeQuestionIndex = 0
     var numberOfQuestionsInCategory = 1
     
@@ -102,10 +105,16 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
             decorativeBar.backgroundColor = UIColor.white
         }
         
-        if questionList.count != 0{
-            self.numberOfQuestionsInCategory = questionList.count
-            let question = questionList[activeQuestionIndex] as! Question
-            let answer = question.answers[indexPath.row]
+        if questionListShuffled.count == 0{
+            questionListShuffled = questionList.shuffled() as! NSMutableArray
+        }
+        if questionListShuffled.count != 0{
+            self.numberOfQuestionsInCategory = questionListShuffled.count
+            let question = questionListShuffled[activeQuestionIndex] as! Question
+            
+            let shuffledAnswers = question.answers.shuffled()
+            let answer = shuffledAnswers[indexPath.row]
+//            let answer = question.answers[indexPath.row]
             cell.answerOptionLabel.text = answer.text
             
             if (delegate != nil){
@@ -208,6 +217,7 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         questionList = questions
+        questionListShuffled = questionList.shuffled() as! NSMutableArray
         print("Quantidade de questões after parse: \(questionList.count)")
         self.numberOfQuestionsInCategory = questionList.count
         
@@ -224,4 +234,29 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
 protocol AnswersViewControllerDelegate {
     func questionText(text: String)
 //    func networkingDidFinish()
+}
+
+
+extension MutableCollection where Indices.Iterator.Element == Index {
+    /// Shuffles the contents of this collection.
+    mutating func shuffle() {
+        let c = count
+        guard c > 1 else { return }
+        
+        for (firstUnshuffled , unshuffledCount) in zip(indices, stride(from: c, to: 1, by: -1)) {
+            let d: IndexDistance = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
+            guard d != 0 else { continue }
+            let i = index(firstUnshuffled, offsetBy: d)
+            swap(&self[firstUnshuffled], &self[i])
+        }
+    }
+}
+
+extension Sequence {
+    /// Returns an array with the contents of this sequence, shuffled.
+    func shuffled() -> [Iterator.Element] {
+        var result = Array(self)
+        result.shuffle()
+        return result
+    }
 }

@@ -32,7 +32,7 @@ class LoadingContentViewController: UIViewController, APIProtocol {
         //Starting with the http request to retrieve questions:
 //        myAPI.get(path: "/57b8cefa1100009e108dee1c", delegate: self)
         myAPI.getLocalFrom(filename: "CategoryMedieval", delegate: self)
-        self.status.text = "Conectando ao servidor..."
+        self.status.text = "Carregando as perguntas..."
         startTimer()
         
         // MARK: UIImageColors
@@ -117,8 +117,8 @@ class LoadingContentViewController: UIViewController, APIProtocol {
         print("\(counter)")
         
         //TODO: Fix the counter == 5 back when in RELEASE mode.
-        if counter >= 5 {
-            self.status.text = "Carregando as perguntas..."
+        if counter >= 4 {
+            self.status.text = "Embaralhando as respostas..."
             if networkingDidFinish{
                 cancelTimer()
                 let myStoryboard = UIStoryboard(name : "Main" , bundle: nil)

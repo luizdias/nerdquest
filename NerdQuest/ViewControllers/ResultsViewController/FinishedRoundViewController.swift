@@ -29,10 +29,6 @@ class FinishedRoundViewController: UIViewController {
 //        }
     }
     
-//    @IBAction func playAgain(_ sender: UIButton) {
-//        playSameRoundAgain()
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //TODO: Localize string bellow:

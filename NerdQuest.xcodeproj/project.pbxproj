@@ -21,6 +21,7 @@
 		4B636D721E5BCBE200C97226 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B636D701E5BCBE200C97226 /* LaunchScreen.storyboard */; };
 		4B636D7D1E5BCBE200C97226 /* NerdQuestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B636D7C1E5BCBE200C97226 /* NerdQuestTests.swift */; };
 		4B636D881E5BCBE200C97226 /* NerdQuestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B636D871E5BCBE200C97226 /* NerdQuestUITests.swift */; };
+		4B6D0C3A1F0C4FA9003EBDCD /* NavigationController+BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6D0C391F0C4FA9003EBDCD /* NavigationController+BackButton.swift */; };
 		4B88D9211E5CF0D30075FC5D /* AllCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88D8CD1E5CF0D30075FC5D /* AllCategories.swift */; };
 		4B88D9221E5CF0D30075FC5D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88D8CE1E5CF0D30075FC5D /* API.swift */; };
 		4B88D9231E5CF0D30075FC5D /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88D8CF1E5CF0D30075FC5D /* APIProtocol.swift */; };
@@ -117,6 +118,7 @@
 		4B636D831E5BCBE200C97226 /* NerdQuestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NerdQuestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B636D871E5BCBE200C97226 /* NerdQuestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NerdQuestUITests.swift; sourceTree = "<group>"; };
 		4B636D891E5BCBE200C97226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B6D0C391F0C4FA9003EBDCD /* NavigationController+BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavigationController+BackButton.swift"; sourceTree = "<group>"; };
 		4B88D8CD1E5CF0D30075FC5D /* AllCategories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCategories.swift; sourceTree = "<group>"; };
 		4B88D8CE1E5CF0D30075FC5D /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4B88D8CF1E5CF0D30075FC5D /* APIProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 				4BA2E1BB1E6CB4150000D158 /* WrongAnswerViewController.swift */,
 				4BABC7021ED4C23A0007F7CE /* CategoriesCollectionViewFlowLayout.swift */,
 				4B91187E1ED66E2E00BC1DC4 /* CategoriesCardViewController.swift */,
+				4B6D0C391F0C4FA9003EBDCD /* NavigationController+BackButton.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -796,6 +799,7 @@
 				4B88D9401E5CF0D30075FC5D /* ScreenShotHelper.swift in Sources */,
 				4B88D92C1E5CF0D30075FC5D /* CollectionViewHelper.swift in Sources */,
 				4B88D93D1E5CF0D30075FC5D /* CornerAnimatable.swift in Sources */,
+				4B6D0C3A1F0C4FA9003EBDCD /* NavigationController+BackButton.swift in Sources */,
 				4B91187F1ED66E2E00BC1DC4 /* CategoriesCardViewController.swift in Sources */,
 				4B88D94E1E5CF0D30075FC5D /* AnswersViewController.swift in Sources */,
 				4B88D94F1E5CF0D30075FC5D /* QuestionsViewController.swift in Sources */,

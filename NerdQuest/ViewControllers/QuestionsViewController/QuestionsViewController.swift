@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AnswersViewControllerDelegate {
+class QuestionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AnswersViewControllerDelegate, NavigationControllerBackButtonDelegate {
     
     @IBOutlet weak var questionLabel: UILabel!
     
@@ -44,11 +44,14 @@ class QuestionsViewController: UIViewController, UITableViewDataSource, UITableV
         let clear = UIColor.clear
         self.navigationController?.navigationBar.tintColor = white
 //        self.setGradientBackground(colorTop: black, colorBottom: mainLabelColorCopy)
-        let transparentButton = UIButton()
-        transparentButton.frame = CGRect(x: 0, y: 0, width: 50, height: 40)
-        transparentButton.backgroundColor = clear
-        transparentButton.addTarget(self, action: #selector(backAction), for: UIControlEvents.touchUpInside)
-        self.navigationController?.navigationBar.addSubview(transparentButton)
+//        let transparentButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 40))
+//        transparentButton.backgroundColor = clear
+//        transparentButton.setTitle("< Sair", for: .normal)
+//        transparentButton.addTarget(self, action: #selector(backAction), for: UIControlEvents.touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Sair", style: .done, target: self, action: #selector(backAction))
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .Done, target: self, action: #selector(self.backToInitial(sender:)))
+
+//        self.navigationController?.navigationBar.addSubview(transparentButton)
         infoBarButton.isEnabled = false
         infoBarButton.tintColor = UIColor.clear
     }
@@ -120,15 +123,18 @@ class QuestionsViewController: UIViewController, UITableViewDataSource, UITableV
         questionLabel.pushTransition(duration: 0.8)
     }
 
-    func backAction(sender:UIButton) {
+    func backAction() {
         for view in (self.navigationController?.viewControllers)! {
             if view is CategoriesCardViewController{
                 let viewToPop = view as! CategoriesCardViewController
                 self.navigationController?.popToViewController(viewToPop, animated: true)
             }
-//                self.navigationController?.popToViewController(views[views.count-3], animated: true)
         }
-        
+    }
+    
+    func shouldPopOnBackButtonPress() -> Bool {
+        self.backAction()
+        return false
     }
     
     func fadeViewInThenOut(label : UILabel, delay: TimeInterval) {
