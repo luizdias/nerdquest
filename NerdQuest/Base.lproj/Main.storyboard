@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G23a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DRw-Lr-igy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DRw-Lr-igy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1017,7 +1017,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRa-hC-869">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRa-hC-869">
                                 <rect key="frame" x="272" y="294" width="35" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="YQQ-nP-R52"/>
@@ -1027,7 +1027,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4E-ye-Cr1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4E-ye-Cr1">
                                 <rect key="frame" x="272" y="335" width="35" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="IeE-f0-Hsr"/>
@@ -1047,21 +1047,21 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10'16&quot;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baJ-Ol-oEe">
-                                <rect key="frame" x="261" y="375" width="46" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baJ-Ol-oEe">
+                                <rect key="frame" x="204" y="375" width="103" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="gZJ-Jo-8Wk"/>
-                                    <constraint firstAttribute="width" constant="46" id="oqI-yV-rHs"/>
+                                    <constraint firstAttribute="width" constant="103" id="oqI-yV-rHs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tempo de duração:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7C-OQ-aLx">
-                                <rect key="frame" x="98" y="374" width="147.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seu tempo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7C-OQ-aLx">
+                                <rect key="frame" x="98" y="374" width="98" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="0CK-f4-wj1"/>
-                                    <constraint firstAttribute="width" constant="147.5" id="APi-TX-JKa"/>
+                                    <constraint firstAttribute="width" constant="98" id="APi-TX-JKa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1113,7 +1113,7 @@
                             <constraint firstItem="P9W-HU-hNP" firstAttribute="top" secondItem="l3c-6z-PG3" secondAttribute="bottom" constant="17" id="bFB-LB-jFX"/>
                             <constraint firstItem="kDD-ne-QjQ" firstAttribute="centerX" secondItem="1Zo-e2-fME" secondAttribute="centerX" id="bFq-PJ-1L7"/>
                             <constraint firstItem="Bdb-0Q-wHb" firstAttribute="top" secondItem="B5D-js-dIv" secondAttribute="bottom" constant="18" id="cP1-5K-DBW"/>
-                            <constraint firstItem="baJ-Ol-oEe" firstAttribute="leading" secondItem="c7C-OQ-aLx" secondAttribute="trailing" constant="15.5" id="cd5-bj-ZLP"/>
+                            <constraint firstItem="baJ-Ol-oEe" firstAttribute="leading" secondItem="c7C-OQ-aLx" secondAttribute="trailing" constant="8" id="cd5-bj-ZLP"/>
                             <constraint firstItem="Bdb-0Q-wHb" firstAttribute="leading" secondItem="l3c-6z-PG3" secondAttribute="trailing" constant="9" id="dFU-Iy-rMP"/>
                             <constraint firstItem="yKg-hg-5SJ" firstAttribute="top" secondItem="X3H-Ru-Y8Z" secondAttribute="bottom" constant="1" id="dQw-Of-ajP"/>
                             <constraint firstAttribute="trailing" secondItem="X3H-Ru-Y8Z" secondAttribute="trailing" id="fxy-VM-17K"/>
@@ -1141,8 +1141,11 @@
                     </view>
                     <connections>
                         <outlet property="chooseNewCategoryButton" destination="rLH-UM-J4R" id="mgv-ep-v85"/>
+                        <outlet property="correctAnswersLabel" destination="YRa-hC-869" id="Suq-ka-cJY"/>
+                        <outlet property="elapsedTimeLabel" destination="baJ-Ol-oEe" id="5nJ-e6-jqd"/>
                         <outlet property="lastRoundStats" destination="dph-WF-rd3" id="9Ci-4Z-dKk"/>
                         <outlet property="playAgainButton" destination="kDD-ne-QjQ" id="Xt9-SK-HjW"/>
+                        <outlet property="wrongAnswersLabel" destination="E4E-ye-Cr1" id="UxU-WY-ocu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87R-UU-aVf" userLabel="First Responder" sceneMemberID="firstResponder"/>

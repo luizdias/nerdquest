@@ -60,6 +60,8 @@ class QuestionsViewController: UIViewController, UITableViewDataSource, UITableV
 //        self.navigationController?.navigationBar.addSubview(transparentButton)
         infoBarButton.isEnabled = false
         infoBarButton.tintColor = UIColor.clear
+        
+        RoundManager.shared().startCounter()
     }
 
     override func viewWillAppear(_ animated: Bool) {

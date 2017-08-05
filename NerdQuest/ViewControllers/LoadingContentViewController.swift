@@ -96,8 +96,8 @@ class LoadingContentViewController: UIViewController, APIProtocol {
         }
     }
     
-    var counter = 0
-    var timer = Timer()
+    private var counter = 0
+    private var timer = Timer()
     
     func startTimer() {
         timer.invalidate() // just in case this button is tapped multiple times
@@ -115,6 +115,10 @@ class LoadingContentViewController: UIViewController, APIProtocol {
     func timerAction() {
         counter += 1
         print("\(counter)")
+        
+        if counter >= 2 {
+            self.getReady.text = "Vamos lá!"
+        }
         
         //TODO: Fix the counter == 5 back when in RELEASE mode.
         if counter >= 4 {

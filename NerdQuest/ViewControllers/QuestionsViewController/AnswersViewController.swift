@@ -140,10 +140,12 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
         if indexPath.row == 0 {
             let popoverPoints = (self.storyboard?.instantiateViewController(withIdentifier: "Result"))! as UIViewController
             viewsToPopOver.append(popoverPoints.view!)
+            RoundManager.shared().correctAnswer()
             swAlertWon.show(viewsToPopOver)
         } else {
             let popoverAnswerResult = (self.storyboard?.instantiateViewController(withIdentifier: "WrongAnswer"))! as UIViewController
             viewsToPopOver.append(popoverAnswerResult.view!)
+            RoundManager.shared().wrongAnswer()
             swAlertLose.show(viewsToPopOver)
         }
     }

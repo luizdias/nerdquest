@@ -12,6 +12,9 @@ class FinishedRoundViewController: UIViewController {
 
     @IBOutlet weak var playAgainButton: UIButton!
     
+    @IBOutlet weak var elapsedTimeLabel: UILabel!
+    @IBOutlet weak var wrongAnswersLabel: UILabel!
+    @IBOutlet weak var correctAnswersLabel: UILabel!
     @IBOutlet weak var chooseNewCategoryButton: UIButton!
     @IBOutlet weak var lastRoundStats: UILabel!
     
@@ -57,6 +60,9 @@ class FinishedRoundViewController: UIViewController {
         
         playAgainButton.addTarget(self, action: #selector(playSameRoundAgain), for: .touchUpInside)
 //        chooseNewCategory.addTarget(self, action: #selector(showAllCategories), for: .touchUpInside)
+        self.correctAnswersLabel.text = "\(RoundManager.shared().getStats().correct)"
+        self.wrongAnswersLabel.text = "\(RoundManager.shared().getStats().wrong)"
+        self.elapsedTimeLabel.text = "\(RoundManager.shared().getStats().time)"
     }
 
     override func didReceiveMemoryWarning() {

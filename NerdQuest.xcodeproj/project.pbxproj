@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A14EDD04878F1F1090B503B /* Pods_NerdQuest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6261F0BF291ECF850236A5F /* Pods_NerdQuest.framework */; };
+		4B1FB6521F353D1D00EA2E7B /* RoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1FB6511F353D1D00EA2E7B /* RoundManager.swift */; };
 		4B2585971E65076F00023D5B /* preloader.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B2585961E65076F00023D5B /* preloader.gif */; };
 		4B2A53D31E638EAC00B820D4 /* FinishedRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A53D21E638EAC00B820D4 /* FinishedRoundViewController.swift */; };
 		4B3DA6101ED3831E0011B1E8 /* CategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3DA60F1ED3831E0011B1E8 /* CategoriesCollectionViewCell.xib */; };
@@ -94,6 +95,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B1FB6511F353D1D00EA2E7B /* RoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundManager.swift; path = Views/RoundManager.swift; sourceTree = "<group>"; };
 		4B2585961E65076F00023D5B /* preloader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = preloader.gif; sourceTree = "<group>"; };
 		4B2A53D21E638EAC00B820D4 /* FinishedRoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedRoundViewController.swift; sourceTree = "<group>"; };
 		4B3DA60F1ED3831E0011B1E8 /* CategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoriesCollectionViewCell.xib; path = NerdQuest/ViewControllers/CategoriesCollection/CategoriesCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
@@ -243,6 +245,7 @@
 				4B88D9071E5CF0D30075FC5D /* ViewControllers */,
 				4B88D91C1E5CF0D30075FC5D /* Views */,
 				4B88D8CD1E5CF0D30075FC5D /* AllCategories.swift */,
+				4B1FB6511F353D1D00EA2E7B /* RoundManager.swift */,
 				4B88D8CE1E5CF0D30075FC5D /* API.swift */,
 				4B88D8CF1E5CF0D30075FC5D /* APIProtocol.swift */,
 				4B636D671E5BCBE200C97226 /* AppDelegate.swift */,
@@ -812,6 +815,7 @@
 				4B88D9511E5CF0D30075FC5D /* ThemesViewController.swift in Sources */,
 				4B88D93A1E5CF0D30075FC5D /* PageCollectionLayout.swift in Sources */,
 				4BABC7031ED4C23A0007F7CE /* CategoriesCollectionViewFlowLayout.swift in Sources */,
+				4B1FB6521F353D1D00EA2E7B /* RoundManager.swift in Sources */,
 				4B88D9541E5CF0D30075FC5D /* Rotatable.swift in Sources */,
 				4B88D9521E5CF0D30075FC5D /* UIViewControllerExtension.swift in Sources */,
 				4B88D92E1E5CF0D30075FC5D /* Answer.swift in Sources */,
