@@ -11,7 +11,7 @@ import RealmSwift
 
 class Question: Object {
     dynamic var id = "0"
-    dynamic var text = " "
+    dynamic var text = ""
     dynamic var isMultiple = true
     dynamic var isTrueFalse = false
     dynamic var isActive = true

@@ -63,6 +63,7 @@ class FinishedRoundViewController: UIViewController {
         self.correctAnswersLabel.text = "\(RoundManager.shared().getStats().correct)"
         self.wrongAnswersLabel.text = "\(RoundManager.shared().getStats().wrong)"
         self.elapsedTimeLabel.text = "\(RoundManager.shared().getStats().time)"
+        RoundManager.shared().resetRound()
     }
 
     override func didReceiveMemoryWarning() {

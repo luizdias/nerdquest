@@ -29,6 +29,9 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
     var activeQuestionIndex = 0
     var numberOfQuestionsInCategory = 1
     
+    private var questionFromShuffledList = Question()
+    private var shuffledAnswers: [Answer] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideHUD()
@@ -44,6 +47,8 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
             // If there's more questions, load the next one!
             if self.activeQuestionIndex+1 < self.numberOfQuestionsInCategory{
                 self.activeQuestionIndex += 1
+                self.questionFromShuffledList = self.questionListShuffled[self.activeQuestionIndex] as! Question
+                self.shuffledAnswers = self.questionFromShuffledList.answers.shuffled()
                 self.tableView.reloadData()
                 UIView.transition(with: super.view, duration: 1.0, options: .transitionFlipFromLeft, animations: {
                     //animations goes here
@@ -58,11 +63,12 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         swAlertLose.didDissmissAllViews = {
-            
             // Controls the END and BEGINING of a set of questions
             // If there's more questions, load the next one!
             if self.activeQuestionIndex+1 < self.numberOfQuestionsInCategory{
                 self.activeQuestionIndex += 1
+                self.questionFromShuffledList = self.questionListShuffled[self.activeQuestionIndex] as! Question
+                self.shuffledAnswers = self.questionFromShuffledList.answers.shuffled()
                 self.tableView.reloadData()
                 UIView.transition(with: super.view, duration: 1.0, options: .transitionFlipFromLeft, animations: {
                     //animations goes here
@@ -75,6 +81,13 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.finishRound()
             }
         }
+        
+        if self.questionListShuffled.count == 0{
+            self.questionListShuffled = self.questionList.shuffled() as! NSMutableArray
+        }
+        self.numberOfQuestionsInCategory = self.questionListShuffled.count
+        self.questionFromShuffledList = self.questionListShuffled[self.activeQuestionIndex] as! Question
+        self.shuffledAnswers = self.questionFromShuffledList.answers.shuffled()
     }
 
     func finishRound() {
@@ -82,7 +95,6 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
         let finishedRoundVC = myStoryboard.instantiateViewController(withIdentifier: "finishedRoundViewController") as! FinishedRoundViewController
         self.navigationController?.pushViewController(finishedRoundVC, animated: true)
 //        self.present(finishedRoundVC, animated: true, completion: nil)
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -105,23 +117,12 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
             decorativeBar.backgroundColor = UIColor.white
         }
         
-        if questionListShuffled.count == 0{
-            questionListShuffled = questionList.shuffled() as! NSMutableArray
-        }
-        if questionListShuffled.count != 0{
-            self.numberOfQuestionsInCategory = questionListShuffled.count
-            let question = questionListShuffled[activeQuestionIndex] as! Question
+        let answer = self.shuffledAnswers[indexPath.row]
+        cell.answerOptionLabel.text = answer.text
+        if (delegate != nil){
+            delegate!.questionText(text: questionFromShuffledList.text)
             
-            let shuffledAnswers = question.answers.shuffled()
-            let answer = shuffledAnswers[indexPath.row]
-//            let answer = question.answers[indexPath.row]
-            cell.answerOptionLabel.text = answer.text
-            
-            if (delegate != nil){
-                delegate!.questionText(text: question.text)
-            }
         }
-        
         return cell
     }
     
@@ -135,9 +136,9 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         var viewsToPopOver = [UIView]()
-
+        let selectedAnswer = self.shuffledAnswers[indexPath.row]
         // Present different Popovers according to results (if the awswer is right or wrong)
-        if indexPath.row == 0 {
+        if  selectedAnswer.isCorrect {
             let popoverPoints = (self.storyboard?.instantiateViewController(withIdentifier: "Result"))! as UIViewController
             viewsToPopOver.append(popoverPoints.view!)
             RoundManager.shared().correctAnswer()

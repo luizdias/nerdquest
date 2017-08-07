@@ -55,6 +55,11 @@ class RoundManager {
         return RoundStats(correct: self.correctAnswers, wrong: self.wrongAnswers, time: self.finalTime)
     }
     
+    func resetRound(){
+        self.correctAnswers = 0
+        self.wrongAnswers = 0        
+    }
+    
     // MARK: - Accessors
     class func shared() -> RoundManager {
         return sharedRoundManager
