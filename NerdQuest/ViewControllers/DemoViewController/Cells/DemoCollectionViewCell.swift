@@ -7,11 +7,12 @@
 //
 
 import UIKit
-import Alamofire
+//import Alamofire
 
 class DemoCollectionViewCell: BasePageCollectionCell {
 
-    var request: Alamofire.Request?
+    //TODO: Networking disabled for this MVP version. Re-enable it here:
+//    var request: Alamofire.Request?
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var customTitle: UILabel!

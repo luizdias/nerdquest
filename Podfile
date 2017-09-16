@@ -7,7 +7,7 @@ target 'NerdQuest' do
 
   # Pods for NerdQuest
   pod 'SwiftyJSON'
-  pod 'Alamofire', '~> 4.0.0'
+  # pod 'Alamofire', '~> 4.0.0'
   pod 'MBProgressHUD', '~> 0.9.2'
   # pod 'Presentation'
   pod 'Presentation', :path => '../Presentation'

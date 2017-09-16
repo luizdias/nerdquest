@@ -11,6 +11,8 @@
 		4B1FB6521F353D1D00EA2E7B /* RoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1FB6511F353D1D00EA2E7B /* RoundManager.swift */; };
 		4B2585971E65076F00023D5B /* preloader.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B2585961E65076F00023D5B /* preloader.gif */; };
 		4B2A53D31E638EAC00B820D4 /* FinishedRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A53D21E638EAC00B820D4 /* FinishedRoundViewController.swift */; };
+		4B35B9931F46644D0053FFC3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B35B9921F46644D0053FFC3 /* StoreKit.framework */; };
+		4B35B9951F4664E60053FFC3 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35B9941F4664E60053FFC3 /* DemoViewController.swift */; };
 		4B3DA6101ED3831E0011B1E8 /* CategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3DA60F1ED3831E0011B1E8 /* CategoriesCollectionViewCell.xib */; };
 		4B3DA6141ED3846C0011B1E8 /* CategoriesCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3DA6121ED3846C0011B1E8 /* CategoriesCollectionViewController.xib */; };
 		4B3DA6341ED393700011B1E8 /* CategoriesBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3DA6331ED3936F0011B1E8 /* CategoriesBrowserViewController.swift */; };
@@ -57,7 +59,6 @@
 		4B88D9451E5CF0D30075FC5D /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88D90A1E5CF0D30075FC5D /* DemoTableViewController.swift */; };
 		4B88D9461E5CF0D30075FC5D /* DemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88D90D1E5CF0D30075FC5D /* DemoCollectionViewCell.swift */; };
 		4B88D9471E5CF0D30075FC5D /* DemoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B88D90E1E5CF0D30075FC5D /* DemoCollectionViewCell.xib */; };
-		4B88D9481E5CF0D30075FC5D /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88D90F1E5CF0D30075FC5D /* DemoViewController.swift */; };
 		4B88D9491E5CF0D30075FC5D /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88D9101E5CF0D30075FC5D /* InitialViewController.swift */; };
 		4B88D94A1E5CF0D30075FC5D /* LoadingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88D9111E5CF0D30075FC5D /* LoadingContentViewController.swift */; };
 		4B88D94B1E5CF0D30075FC5D /* LoadingPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88D9121E5CF0D30075FC5D /* LoadingPopoverViewController.swift */; };
@@ -98,6 +99,8 @@
 		4B1FB6511F353D1D00EA2E7B /* RoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundManager.swift; path = Views/RoundManager.swift; sourceTree = "<group>"; };
 		4B2585961E65076F00023D5B /* preloader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = preloader.gif; sourceTree = "<group>"; };
 		4B2A53D21E638EAC00B820D4 /* FinishedRoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedRoundViewController.swift; sourceTree = "<group>"; };
+		4B35B9921F46644D0053FFC3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4B35B9941F4664E60053FFC3 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		4B3DA60F1ED3831E0011B1E8 /* CategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoriesCollectionViewCell.xib; path = NerdQuest/ViewControllers/CategoriesCollection/CategoriesCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		4B3DA6121ED3846C0011B1E8 /* CategoriesCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoriesCollectionViewController.xib; path = ../ViewControllers/CategoriesCollectionViewController.xib; sourceTree = "<group>"; };
 		4B3DA6331ED3936F0011B1E8 /* CategoriesBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesBrowserViewController.swift; sourceTree = "<group>"; };
@@ -155,7 +158,6 @@
 		4B88D90A1E5CF0D30075FC5D /* DemoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
 		4B88D90D1E5CF0D30075FC5D /* DemoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCollectionViewCell.swift; sourceTree = "<group>"; };
 		4B88D90E1E5CF0D30075FC5D /* DemoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCollectionViewCell.xib; sourceTree = "<group>"; };
-		4B88D90F1E5CF0D30075FC5D /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		4B88D9101E5CF0D30075FC5D /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		4B88D9111E5CF0D30075FC5D /* LoadingContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingContentViewController.swift; sourceTree = "<group>"; };
 		4B88D9121E5CF0D30075FC5D /* LoadingPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingPopoverViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B35B9931F46644D0053FFC3 /* StoreKit.framework in Frameworks */,
 				0A14EDD04878F1F1090B503B /* Pods_NerdQuest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +210,7 @@
 		0406F4B53ABBD90EA1DC1CAD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B35B9921F46644D0053FFC3 /* StoreKit.framework */,
 				A6261F0BF291ECF850236A5F /* Pods_NerdQuest.framework */,
 			);
 			name = Frameworks;
@@ -496,8 +500,8 @@
 		4B88D90B1E5CF0D30075FC5D /* DemoViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4B35B9941F4664E60053FFC3 /* DemoViewController.swift */,
 				4B88D90C1E5CF0D30075FC5D /* Cells */,
-				4B88D90F1E5CF0D30075FC5D /* DemoViewController.swift */,
 			);
 			path = DemoViewController;
 			sourceTree = "<group>";
@@ -640,8 +644,13 @@
 				TargetAttributes = {
 					4B636D631E5BCBE200C97226 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 555AFREN26;
+						DevelopmentTeam = DHQE73465J;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					4B636D771E5BCBE200C97226 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -791,7 +800,6 @@
 				4B88D9421E5CF0D30075FC5D /* TransitionDriver.swift in Sources */,
 				4B88D9211E5CF0D30075FC5D /* AllCategories.swift in Sources */,
 				4B88D94B1E5CF0D30075FC5D /* LoadingPopoverViewController.swift in Sources */,
-				4B88D9481E5CF0D30075FC5D /* DemoViewController.swift in Sources */,
 				4B88D93F1E5CF0D30075FC5D /* ConstraintsHelper.swift in Sources */,
 				4B88D94D1E5CF0D30075FC5D /* AnswerOptionTableViewCell.swift in Sources */,
 				4B88D94A1E5CF0D30075FC5D /* LoadingContentViewController.swift in Sources */,
@@ -813,6 +821,7 @@
 				4B88D9461E5CF0D30075FC5D /* DemoCollectionViewCell.swift in Sources */,
 				4B88D9491E5CF0D30075FC5D /* InitialViewController.swift in Sources */,
 				4B88D9511E5CF0D30075FC5D /* ThemesViewController.swift in Sources */,
+				4B35B9951F4664E60053FFC3 /* DemoViewController.swift in Sources */,
 				4B88D93A1E5CF0D30075FC5D /* PageCollectionLayout.swift in Sources */,
 				4BABC7031ED4C23A0007F7CE /* CategoriesCollectionViewFlowLayout.swift in Sources */,
 				4B1FB6521F353D1D00EA2E7B /* RoundManager.swift in Sources */,
@@ -1001,10 +1010,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 555AFREN26;
+				DEVELOPMENT_TEAM = DHQE73465J;
 				INFOPLIST_FILE = NerdQuest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.towntree.nerdquest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luizfernandodias.nerdquest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -1017,10 +1027,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 555AFREN26;
+				DEVELOPMENT_TEAM = DHQE73465J;
 				INFOPLIST_FILE = NerdQuest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.towntree.nerdquest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luizfernandodias.nerdquest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;

@@ -95,7 +95,8 @@ class InitialViewController: UIViewController, APIProtocol {
     }
     
     func request(endpoint: String){
-        myAPI.get(path: endpoint, delegate: self)
+        //TODO: Networking disabled for this MVP version. Re-enable it here:
+//        myAPI.get(path: endpoint, delegate: self)
     }
     
     func  didReceiveResult(results result: JSON) {

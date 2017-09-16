@@ -1,5 +1,4 @@
 PODS:
-  - Alamofire (4.0.1)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -115,7 +114,6 @@ PODS:
   - UIImageColors (1.1.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0.0)
   - Crashlytics
   - Fabric
   - Firebase/Core
@@ -149,7 +147,6 @@ CHECKOUT OPTIONS:
     :git: https://github.com/luizdias/UIImageColors.git
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Cartography: 0538ccb4044acbbda2266335fc58cb4228794d90
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
@@ -182,6 +179,6 @@ SPEC CHECKSUMS:
   TwitterKit: 3b6044a7320340326a4098f3e37aa1dbaeb94942
   UIImageColors: 07ed6ca8953eaf3150ea6069c705b7cc73fb559c
 
-PODFILE CHECKSUM: dc0acdcffdc307f4448202ba9e4d17ad0bcd0e24
+PODFILE CHECKSUM: 0165694f7d88ededa93182798c99c05bd0a40984
 
 COCOAPODS: 1.2.0

@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftyJSON
-import Alamofire
+//import Alamofire
 import RealmSwift
 
 // APIProtocol was removed :/
@@ -245,7 +245,8 @@ extension DemoViewController {
 
         _ = category.image
         cell.backgroundImageView.image = nil
-        cell.request?.cancel()
+        //TODO: Networking disabled for this MVP version. Re-enable it here:
+//        cell.request?.cancel()
 //        cell.request = Alamofire.request(imageURL, method: .get).responseImage() {
 //            [weak self] response in
 //            if let image = response.result.value {

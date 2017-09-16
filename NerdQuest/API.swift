@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Alamofire
+//import Alamofire
 import SwiftyJSON
 
 class API {
@@ -15,48 +15,50 @@ class API {
     private let hostname = "http://www.mocky.io/v2"
 //    private let hostname = "https://resonant-time-128918.firebaseio.com"
     private let hostdummy = "http://localhost:3000"
-    
-    let defaultManager: Alamofire.SessionManager = {
-        let serverTrustPolicies: [String: ServerTrustPolicy] = [
-            "localhost": .disableEvaluation
-        ]
-        
-        let configuration = URLSessionConfiguration.default
-        configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
-        configuration.timeoutIntervalForResource = 20 //seconds
-        
-        return Alamofire.SessionManager(
-            configuration: configuration,
-            serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
-        )
-    }()
+
+    //TODO: Networking disabled for this MVP version. Re-enable it here:
+//    let defaultManager: Alamofire.SessionManager = {
+//        let serverTrustPolicies: [String: ServerTrustPolicy] = [
+//            "localhost": .disableEvaluation
+//        ]
+//        
+//        let configuration = URLSessionConfiguration.default
+//        configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
+//        configuration.timeoutIntervalForResource = 20 //seconds
+//        
+//        return Alamofire.SessionManager(
+//            configuration: configuration,
+//            serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
+//        )
+//    }()
     
     // Setting up an API Class with a GET method that accepts a delegate of type APIProtocol
-    func get(path: String, parameters: [String: AnyObject]? = nil, delegate: APIProtocol? = nil){
-        let url = "\(self.hostname)\(path)"
-        NSLog("Preparing for GET request to: \(url)")
-        
-        Alamofire.request(url, method: .get, parameters: parameters)
-            .validate()
-            //TODO: Use NSURLCache to handle network caching in the future
-//            .response {(request, res, data, error) in
-//                let cachedURLResponse = NSCachedURLResponse(response: res!, data: (data! as NSData), userInfo: nil, storagePolicy: .Allowed)
-//                NSURLCache.sharedURLCache().storeCachedResponse(cachedURLResponse, forRequest: request!)}
-            .responseJSON { response in
-                switch response.result {
-                case .success:
-                    print("GET Validation Successful")
-                    let json = JSON(response.result.value!)
-                    print("GET Result: \(json)")
-                    // Call delegate if it was passed into the call
-                    if (delegate != nil) {
-                        delegate!.didReceiveResult(results: json)
-                    }
-                case .failure(let error):
-                    print("GET Error: \(error)")
-                }
-        }
-    }
+    //TODO: Networking disabled for this MVP version. Re-enable it here:
+//    func get(path: String, parameters: [String: AnyObject]? = nil, delegate: APIProtocol? = nil){
+//        let url = "\(self.hostname)\(path)"
+//        NSLog("Preparing for GET request to: \(url)")
+//        
+//        Alamofire.request(url, method: .get, parameters: parameters)
+//            .validate()
+//            //TODO: Use NSURLCache to handle network caching in the future
+////            .response {(request, res, data, error) in
+////                let cachedURLResponse = NSCachedURLResponse(response: res!, data: (data! as NSData), userInfo: nil, storagePolicy: .Allowed)
+////                NSURLCache.sharedURLCache().storeCachedResponse(cachedURLResponse, forRequest: request!)}
+//            .responseJSON { response in
+//                switch response.result {
+//                case .success:
+//                    print("GET Validation Successful")
+//                    let json = JSON(response.result.value!)
+//                    print("GET Result: \(json)")
+//                    // Call delegate if it was passed into the call
+//                    if (delegate != nil) {
+//                        delegate!.didReceiveResult(results: json)
+//                    }
+//                case .failure(let error):
+//                    print("GET Error: \(error)")
+//                }
+//        }
+//    }
     
     func getLocalFrom(filename: String, delegate: APIProtocol? = nil){
 
@@ -70,59 +72,61 @@ class API {
     }
     
     // Setting up an API Class with a POST method that accepts a elegate of type APIProtocol
-    func post(path: String, parameters: [String: AnyObject]? = nil, delegate: APIProtocol? = nil){
-        let url = "\(self.hostname)\(path)"
-        NSLog("Preparing for POST request to: \(url)")
-       
-        Alamofire.request(url, method: .post ,parameters: parameters)
-            .validate() 
-            .responseJSON { response in
-                switch response.result {
-                case .success:
-                    print("Validation Successful")
-                    let json = JSON(response.result.value!)
-                    //                   NSLog("POST Result: \(json)")
-                    
-                    if (json != nil && delegate != nil && json.count != 0){
-                        delegate!.didReceiveResult(results: json)
-                    } else {
-                        delegate!.didErrorHappened(error: NSError(domain: "nerdquestapp.com", code: 1011, userInfo: ["message" : "Não há nada para exibir."]))
-                    }
-                case .failure(let error):
-                    print("POST Error \(error)")
-                    if (delegate != nil){
-                        delegate!.didErrorHappened(error: error as NSError)
-                    }
-                }
-                
-        }
-        
-    }
+    //TODO: Networking disabled for this MVP version. Re-enable it here:
+//    func post(path: String, parameters: [String: AnyObject]? = nil, delegate: APIProtocol? = nil){
+//        let url = "\(self.hostname)\(path)"
+//        NSLog("Preparing for POST request to: \(url)")
+//       
+//        Alamofire.request(url, method: .post ,parameters: parameters)
+//            .validate() 
+//            .responseJSON { response in
+//                switch response.result {
+//                case .success:
+//                    print("Validation Successful")
+//                    let json = JSON(response.result.value!)
+//                    //                   NSLog("POST Result: \(json)")
+//                    
+//                    if (json != nil && delegate != nil && json.count != 0){
+//                        delegate!.didReceiveResult(results: json)
+//                    } else {
+//                        delegate!.didErrorHappened(error: NSError(domain: "nerdquestapp.com", code: 1011, userInfo: ["message" : "Não há nada para exibir."]))
+//                    }
+//                case .failure(let error):
+//                    print("POST Error \(error)")
+//                    if (delegate != nil){
+//                        delegate!.didErrorHappened(error: error as NSError)
+//                    }
+//                }
+//                
+//        }
+//        
+//    }
     
     
     // Setting up an API Class with a GET method that accepts a elegate of type APIProtocol
-    func getLocal(path: String, parameters: [String: AnyObject]? = nil, delegate: APIProtocol? = nil){
-        let url = "\(self.hostdummy)\(path)"
-        NSLog("Preparing for GET request to: \(url)")
-        
-        defaultManager.request(url, method: .get, parameters: parameters)
-            .validate()
-            .responseJSON { response in
-                switch response.result {
-                case .success:
-                    print("GET Validation Successful")
-                    let json = JSON(response.result.value!)
-                    print("GET Result: \(json)")
-                    // Call delegate if it was passed into the call
-                    if (delegate != nil) {
-                        delegate!.didReceiveResult(results: json)
-                    }
-                case .failure(let error):
-                    print("GET Error: \(error)")
-                }
-                
-        }
-    }
+    //TODO: Networking disabled for this MVP version. Re-enable it here:
+//    func getLocal(path: String, parameters: [String: AnyObject]? = nil, delegate: APIProtocol? = nil){
+//        let url = "\(self.hostdummy)\(path)"
+//        NSLog("Preparing for GET request to: \(url)")
+//        
+//        defaultManager.request(url, method: .get, parameters: parameters)
+//            .validate()
+//            .responseJSON { response in
+//                switch response.result {
+//                case .success:
+//                    print("GET Validation Successful")
+//                    let json = JSON(response.result.value!)
+//                    print("GET Result: \(json)")
+//                    // Call delegate if it was passed into the call
+//                    if (delegate != nil) {
+//                        delegate!.didReceiveResult(results: json)
+//                    }
+//                case .failure(let error):
+//                    print("GET Error: \(error)")
+//                }
+//                
+//        }
+//    }
     
     
 }
