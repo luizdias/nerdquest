@@ -22,7 +22,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     
     @IBAction func buyOrPlay(_ sender: UIButton) {
         if(self.cellDelegate != nil){ //Just to be safe.
-            self.cellDelegate?.callSegueFromCell(myData: "Luiz" as AnyObject)
+            self.cellDelegate?.callSegueFromCell(myData: "testy" as AnyObject)
         }
     }
     
