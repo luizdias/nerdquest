@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DRw-Lr-igy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DRw-Lr-igy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -202,9 +202,17 @@
                                     <segue destination="H65-V5-XTn" kind="embed" identifier="answersSegue" id="4WC-FW-6VQ"/>
                                 </connections>
                             </containerView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="g9s-Pw-tUc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="cCA-oE-nFf"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="g9s-Pw-tUc" firstAttribute="top" secondItem="kof-ex-Wgw" secondAttribute="top" id="2MN-fV-yfE"/>
+                            <constraint firstItem="g9s-Pw-tUc" firstAttribute="leading" secondItem="kof-ex-Wgw" secondAttribute="leading" id="3q5-fD-qhZ"/>
                             <constraint firstItem="PeC-Rv-qaq" firstAttribute="height" secondItem="be4-dy-UHr" secondAttribute="height" multiplier="0.5" id="Etj-ij-xwd"/>
                             <constraint firstItem="KWw-wd-Ikb" firstAttribute="top" secondItem="be4-dy-UHr" secondAttribute="bottom" id="Hjq-KV-wrg"/>
                             <constraint firstItem="BTa-uw-vSS" firstAttribute="trailing" secondItem="kof-ex-Wgw" secondAttribute="trailingMargin" id="LsC-vf-dGT"/>
@@ -212,6 +220,7 @@
                             <constraint firstItem="be4-dy-UHr" firstAttribute="leading" secondItem="kof-ex-Wgw" secondAttribute="leading" id="Uw2-A6-Hxe"/>
                             <constraint firstItem="PeC-Rv-qaq" firstAttribute="leading" secondItem="kof-ex-Wgw" secondAttribute="leadingMargin" id="VPp-11-4pg"/>
                             <constraint firstItem="PeC-Rv-qaq" firstAttribute="trailing" secondItem="kof-ex-Wgw" secondAttribute="trailingMargin" id="Yfe-so-g93"/>
+                            <constraint firstAttribute="trailing" secondItem="g9s-Pw-tUc" secondAttribute="trailing" id="ezy-Lf-srh"/>
                             <constraint firstItem="KWw-wd-Ikb" firstAttribute="top" secondItem="PeC-Rv-qaq" secondAttribute="bottom" constant="-40" identifier="answersVerticalConstraint" id="fAi-gF-NHQ"/>
                             <constraint firstItem="be4-dy-UHr" firstAttribute="top" secondItem="njI-fL-H92" secondAttribute="bottom" constant="-44" id="kCW-db-vMu"/>
                             <constraint firstItem="BTa-uw-vSS" firstAttribute="top" secondItem="njI-fL-H92" secondAttribute="bottom" id="rs7-u6-hpC"/>
@@ -249,12 +258,13 @@
                         <outlet property="answersViewBottomConstraint" destination="fAi-gF-NHQ" id="u8I-SX-oMq"/>
                         <outlet property="answersViewContainer" destination="PeC-Rv-qaq" id="bog-VI-m8C"/>
                         <outlet property="infoBarButton" destination="QLS-Ks-RDH" id="QP0-fV-1Zv"/>
+                        <outlet property="progressBar" destination="g9s-Pw-tUc" id="wcl-S8-3iO"/>
                         <outlet property="questionLabel" destination="BTa-uw-vSS" id="ePh-of-2cO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="euA-T4-ymZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3820" y="427"/>
+            <point key="canvasLocation" x="3820" y="425.93703148425789"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="d6N-Nw-3dV">
@@ -462,7 +472,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Torne-se um expert e descubra inúmeras curiosidades incríveis com este pack de perguntas sobre o mundo medieval." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xh7-la-W1r">
-                                                    <rect key="frame" x="40" y="8" width="283" height="93"/>
+                                                    <rect key="frame" x="48" y="11" width="267" height="93"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="93" id="sMh-kr-4nO"/>
                                                     </constraints>
@@ -514,7 +524,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zo-A7-sbM">
-                                                    <rect key="frame" x="40" y="57" width="273" height="59"/>
+                                                    <rect key="frame" x="40" y="54" width="273" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="zel-Yy-v9k"/>
                                                     </constraints>
@@ -569,7 +579,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkV-jC-tTs">
-                                                    <rect key="frame" x="40" y="57" width="273" height="59"/>
+                                                    <rect key="frame" x="40" y="54" width="273" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="pYw-qC-eUH"/>
                                                     </constraints>
@@ -624,7 +634,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZN-4l-hGa">
-                                                    <rect key="frame" x="40" y="57" width="273" height="59"/>
+                                                    <rect key="frame" x="40" y="54" width="273" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="z9M-6w-uYi"/>
                                                     </constraints>
@@ -679,7 +689,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYn-LQ-ReD">
-                                                    <rect key="frame" x="40" y="57" width="273" height="59"/>
+                                                    <rect key="frame" x="40" y="54" width="273" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="sMt-dP-LYh"/>
                                                     </constraints>
@@ -728,7 +738,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6w-vY-gMp">
-                                                    <rect key="frame" x="40" y="57" width="273" height="59"/>
+                                                    <rect key="frame" x="40" y="54" width="273" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="T4M-G7-7hc"/>
                                                     </constraints>
@@ -824,7 +834,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resposta Opção A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilP-RE-7LI">
-                                                    <rect key="frame" x="21" y="8" width="314" height="44"/>
+                                                    <rect key="frame" x="21" y="11" width="307" height="38"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                     <color key="textColor" red="0.12941176469999999" green="0.28235294119999998" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>

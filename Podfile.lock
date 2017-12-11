@@ -96,11 +96,11 @@ PODS:
   - Presentation (3.1.0):
     - Cartography
     - Pages
-  - Realm (2.7.0):
-    - Realm/Headers (= 2.7.0)
-  - Realm/Headers (2.7.0)
-  - RealmSwift (2.7.0):
-    - Realm (= 2.7.0)
+  - Realm (3.0.2):
+    - Realm/Headers (= 3.0.2)
+  - Realm/Headers (3.0.2)
+  - RealmSwift (3.0.2):
+    - Realm (= 3.0.2)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
@@ -112,6 +112,7 @@ PODS:
   - TwitterKit (2.8.1):
     - TwitterCore (>= 2.8)
   - UIImageColors (1.1.1)
+  - YLProgressBar (3.10.2)
 
 DEPENDENCIES:
   - Crashlytics
@@ -126,6 +127,7 @@ DEPENDENCIES:
   - SwiftyJSON
   - TKSwarmAlert (from `~/Development/TKSwarmAlert/`)
   - UIImageColors (from `https://github.com/luizdias/UIImageColors.git`)
+  - YLProgressBar (~> 3.10.2)
 
 EXTERNAL SOURCES:
   Hue:
@@ -169,8 +171,8 @@ SPEC CHECKSUMS:
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   Pages: f3718e6f03a5e2787f6b0bff4becb3c7c19bcebc
   Presentation: 07f001419368d0ece73285f238b1dc3852462f23
-  Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
-  RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
+  Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
+  RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftyGif: 89a0bb19709bdb6990e10405ad456d8bea804a65
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
@@ -178,7 +180,8 @@ SPEC CHECKSUMS:
   TwitterCore: e959987be23c767004d29eb7fab8d85d8585a2e5
   TwitterKit: 3b6044a7320340326a4098f3e37aa1dbaeb94942
   UIImageColors: 07ed6ca8953eaf3150ea6069c705b7cc73fb559c
+  YLProgressBar: 365b6c5e934be18b661f79413db33c993c8e8251
 
-PODFILE CHECKSUM: 0165694f7d88ededa93182798c99c05bd0a40984
+PODFILE CHECKSUM: 10a92fba6967987fcdfc5a3652e64787f578b15c
 
 COCOAPODS: 1.2.0

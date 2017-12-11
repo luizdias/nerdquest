@@ -10,6 +10,7 @@ import UIKit
 
 class QuestionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AnswersViewControllerDelegate, NavigationControllerBackButtonDelegate {
     
+    @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var questionLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
@@ -24,10 +25,15 @@ class QuestionsViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     var questionList: NSMutableArray = []
+    var questionURL = URL.init(string: "")
     var backgroundColor = UIColor.white
     var mainLabelColor = UIColor.white
     var secondaryLabelColor = UIColor.white
     var detailLabelColor = UIColor.white
+    var seconds = 60 //This variable will hold a starting value of seconds. It could be any amount above 0.
+    var timeFloatValue = Float(1.0)
+    var timer = Timer()
+    var isTimerRunning = false //This will be used to make sure only one timer is created at a time.
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -60,7 +66,7 @@ class QuestionsViewController: UIViewController, UITableViewDataSource, UITableV
 //        self.navigationController?.navigationBar.addSubview(transparentButton)
         infoBarButton.isEnabled = false
         infoBarButton.tintColor = UIColor.clear
-        
+        progressBar.progress = timeFloatValue
         RoundManager.shared().startCounter()
     }
 
@@ -77,8 +83,13 @@ class QuestionsViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        runTimer()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        stopTimer()
     }
     
+    //MARK: TableView Delegates
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
@@ -124,8 +135,25 @@ class QuestionsViewController: UIViewController, UITableViewDataSource, UITableV
         self.view.layer.insertSublayer(gradientLayer, at: 0)
         
     }
+    // MARK: Timer functions
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self,   selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
+    }
     
-    // AnswersViewController Delegates here:
+    func updateTimer() {
+        seconds -= 1     //This will decrement(count down)the seconds.
+        timeFloatValue -= (1/5000)
+        progressBar.setProgress(timeFloatValue, animated: true)
+        if timeFloatValue <= 0 {
+            stopTimer()
+        }
+    }
+    
+    func stopTimer(){
+        timer.invalidate()
+    }
+    
+    //MARK: AnswersViewController Delegates
     func questionText(text: String) {
         questionLabel.text = text
         questionLabel.pushTransition(duration: 0.8)
@@ -163,7 +191,7 @@ class QuestionsViewController: UIViewController, UITableViewDataSource, UITableV
     }
 }
 
-
+//MARK: UILabel transition extension
 // Usage: insert view.pushTransition right before changing content
 extension UILabel {
     func pushTransition(duration:CFTimeInterval) {

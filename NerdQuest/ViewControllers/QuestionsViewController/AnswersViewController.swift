@@ -83,20 +83,14 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         if self.questionListShuffled.count == 0{
-            self.questionListShuffled = self.questionList.shuffled() as! NSMutableArray
+            self.questionListShuffled.addObjects(from: self.questionList.shuffled() as! [Question])
         }
         self.numberOfQuestionsInCategory = self.questionListShuffled.count
         self.questionFromShuffledList = self.questionListShuffled[self.activeQuestionIndex] as! Question
         self.shuffledAnswers = self.questionFromShuffledList.answers.shuffled()
     }
-
-    func finishRound() {
-        let myStoryboard = UIStoryboard(name : "Main" , bundle: nil)
-        let finishedRoundVC = myStoryboard.instantiateViewController(withIdentifier: "finishedRoundViewController") as! FinishedRoundViewController
-        self.navigationController?.pushViewController(finishedRoundVC, animated: true)
-//        self.present(finishedRoundVC, animated: true, completion: nil)
-    }
     
+    //MARK: TableView Delegates
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
         let cell:AnswerOptionTableViewCell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! AnswerOptionTableViewCell
@@ -121,7 +115,6 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.answerOptionLabel.text = answer.text
         if (delegate != nil){
             delegate!.questionText(text: questionFromShuffledList.text)
-            
         }
         return cell
     }
@@ -160,17 +153,8 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
         dim(direction: .Out, speed: dimSpeed)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-//  The two Functions bellow are DEPRECATED:
+    //TODO:  The two Functions bellow are DEPRECATED:
     func didErrorHappened(error: NSError) {
         self.hideHUD()
         let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.alert)
@@ -232,8 +216,16 @@ class AnswersViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.hideHUD()
     }
     
+    func finishRound() {
+        let myStoryboard = UIStoryboard(name : "Main" , bundle: nil)
+        let finishedRoundVC = myStoryboard.instantiateViewController(withIdentifier: "finishedRoundViewController") as! FinishedRoundViewController
+        self.navigationController?.pushViewController(finishedRoundVC, animated: true)
+        //        self.present(finishedRoundVC, animated: true, completion: nil)
+    }
+
 }
 
+//MARK: AnswersViewController Delegate definition
 protocol AnswersViewControllerDelegate {
     func questionText(text: String)
 //    func networkingDidFinish()

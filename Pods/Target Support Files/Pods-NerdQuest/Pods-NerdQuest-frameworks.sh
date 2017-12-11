@@ -107,6 +107,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
   install_framework "$BUILT_PRODUCTS_DIR/TKSwarmAlert/TKSwarmAlert.framework"
   install_framework "$BUILT_PRODUCTS_DIR/UIImageColors/UIImageColors.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/YLProgressBar/YLProgressBar.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Bolts/Bolts.framework"
@@ -127,6 +128,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
   install_framework "$BUILT_PRODUCTS_DIR/TKSwarmAlert/TKSwarmAlert.framework"
   install_framework "$BUILT_PRODUCTS_DIR/UIImageColors/UIImageColors.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/YLProgressBar/YLProgressBar.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

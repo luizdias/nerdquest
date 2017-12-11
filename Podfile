@@ -29,4 +29,6 @@ target 'NerdQuest' do
   # pod 'lottie-ios'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'YLProgressBar', '~> 3.10.2'
+  
 end
